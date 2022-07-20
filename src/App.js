@@ -1,10 +1,30 @@
-import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import NavMenu from './components/NavMenu/index';
+import About from './pages/About';
+import Home from './pages/Home';
+import Contact from './pages/Contact';
+import Projects from './pages/Projects';
 
 export default function App() {
   return (
     <>
-      <h1>Welcome to react portfolio Project</h1>
-      <h3>-Shaif Arfan</h3>
+      <Router>
+        <NavMenu />
+        <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route path="/about">
+            <About />
+          </Route>
+          <Route path="/projects">
+            <Projects />
+          </Route>
+          <Route path="/contact">
+            <Contact />
+          </Route>
+        </Switch>
+      </Router>
     </>
   );
 }
