@@ -1,6 +1,7 @@
 import AboutSection from '../../components/AboutSection';
 import HeroSection from '../../components/HeroSection';
 import ServicesSection from '../../components/ServicesSection';
+import ProjectsSection from '../../components/ProjectsSection';
 
 function Home() {
   return (
@@ -8,6 +9,7 @@ function Home() {
       <HeroSection />
       <AboutSection />
       <ServicesSection />
+      <ProjectsSection />
     </div>
   );
 }
