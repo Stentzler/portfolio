@@ -99,6 +99,10 @@ export const HeroStyles = styled.div`
   svg {
     font-size: 3rem;
     transform: rotate(90deg) translateX(2px);
+    transition: all 0.3s;
+    &:hover {
+      fill: var(--white);
+    }
   }
 
   @media only screen and (max-width: 768px) {

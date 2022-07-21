@@ -3,7 +3,7 @@ import { ButtonStyle } from './styles';
 
 function Button({ btnLink = 'test', btnText = 'test', outline = false }) {
   return (
-    <ButtonStyle outline={outline}>
+    <ButtonStyle outline={outline} className="button-wrapper">
       <Link className="button" to={btnLink}>
         {btnText}
       </Link>

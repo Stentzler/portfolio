@@ -2,7 +2,7 @@ import { PStyle } from './styles';
 
 function Ptext({ children }) {
   return (
-    <PStyle>
+    <PStyle className="para">
       <p>{children}</p>
     </PStyle>
   );

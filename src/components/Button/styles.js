@@ -11,6 +11,13 @@ export const ButtonStyle = styled.div`
     display: inline-block;
     border: 2px solid var(--gray-1);
     color: ${(props) => (props.outline ? 'var(--gray-1)' : '#000')};
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      color: var(--gray-1);
+      background-color: ${(props) =>
+        props.outline ? 'var(--gray-2)' : 'var(--gray-2)'};
+    }
   }
   @media only screen and (max-width: 768px) {
     .button {
