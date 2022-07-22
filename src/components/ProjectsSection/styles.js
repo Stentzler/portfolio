@@ -5,7 +5,7 @@ export const ProjectSectionStyle = styled.div`
   .projects__allItems {
     display: flex;
     gap: 3rem;
-    margin-top: 5rem;
+    margin-top: 2rem;
   }
   .swiper-container {
     padding-top: 8rem;
