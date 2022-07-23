@@ -3,7 +3,7 @@ import Ptext from '../Ptext';
 import FooterCol from '../FooterCol';
 
 const FooterStyles = styled.footer`
-  padding-top: 5rem;
+  padding-top: 8rem;
   background-color: var(--deep-dark);
   .container {
     display: flex;
