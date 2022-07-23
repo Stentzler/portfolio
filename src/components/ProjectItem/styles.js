@@ -33,4 +33,12 @@ export const ProjectItemStyles = styled.div`
       height: 350px;
     }
   }
+
+  .projectButton {
+    display: inline-block;
+    font-size: 1.8rem;
+    text-decoration: underline;
+    margin: 2rem 0;
+    color: royalblue;
+  }
 `;

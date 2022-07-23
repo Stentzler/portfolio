@@ -6,7 +6,7 @@ export const NavMenuStyles = styled.div`
   top: 0;
   left: 0;
 
-  width: 100%;
+  width: calc(100% - 9px);
   padding: 1rem 0;
 
   background-color: var(--dark-bg);

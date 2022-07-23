@@ -26,6 +26,7 @@ const projects = [
     desc:
       'Using this app you can track any e coin. Also you will get a good advise about investment form the professional',
     img: CoinTrackerImg,
+    link: 'https://www.google.com',
   },
   {
     id: uuidv4(),
