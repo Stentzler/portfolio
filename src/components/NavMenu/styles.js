@@ -56,8 +56,29 @@ export const NavMenuStyles = styled.div`
     display: none;
   }
 
+  .btn-lang {
+    position: absolute;
+    right: 45px;
+    top: 17px;
+    height: 30px;
+    border-radius: 8px;
+    padding: 2px 6px;
+    border: none;
+    background-color: #000;
+    color: var(--white);
+    cursor: pointer;
+    &:hover {
+      background-color: var(--deep-dark);
+    }
+  }
+
   @media only screen and (max-width: 768px) {
     padding: 0;
+
+    .btn-lang {
+      right: 210px;
+      top: 15px;
+    }
 
     .mobile-menu-icon {
       display: block;

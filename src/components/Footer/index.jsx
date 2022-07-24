@@ -1,6 +1,8 @@
 import styled from 'styled-components';
+import { useContext } from 'react';
 import Ptext from '../Ptext';
 import FooterCol from '../FooterCol';
+import { LanguageContext } from '../../providers/language';
 
 const FooterStyles = styled.footer`
   padding-top: 8rem;
@@ -65,16 +67,14 @@ const FooterStyles = styled.footer`
 `;
 
 function Footer() {
+  const { language } = useContext(LanguageContext);
+
   return (
     <FooterStyles>
       <div className="container">
         <div className="footer__col1">
           <div className="footer__col1__title">Vinicius Lima</div>
-          <Ptext>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis
-            magnam laudantium ex iusto exercitationem tempore minima sequi
-            consectetur, rem quisquam!
-          </Ptext>
+          <Ptext>Full-Stack Developer</Ptext>
         </div>
         <div className="footer__col2">
           <FooterCol
@@ -105,10 +105,12 @@ function Footer() {
         </div>
         <div className="footer__col3">
           <FooterCol
-            heading="Location"
+            heading={language ? 'Localização' : 'Location'}
             links={[
               {
-                title: 'Curitiba, Paraná, Brazil',
+                title: language
+                  ? 'Curitiba, Paraná, Brasil'
+                  : 'Curitiba, Paraná, Brazil',
                 path:
                   'https://www.google.com/maps/place/Curitiba,+State+of+Paran%C3%A1/@-25.4532075,-49.3119538,13z/data=!4m13!1m7!3m6!1s0x94dce35351cdb3dd:0x6d2f6ba5bacbe809!2sCuritiba,+State+of+Paran%C3%A1!3b1!8m2!3d-25.4372382!4d-49.2699727!3m4!1s0x94dce35351cdb3dd:0x6d2f6ba5bacbe809!8m2!3d-25.4372382!4d-49.2699727',
                 link: false,

@@ -1,18 +1,28 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Navigation } from 'swiper';
+import { useContext } from 'react';
 import SectionTitle from '../SectionTitle';
 import projects from '../../assets/data/projects';
+import projetos from '../../assets/data/projetos';
 import ProjectItem from '../ProjectItem';
 import { ProjectSectionStyle } from './styles';
 import 'swiper/swiper-bundle.min.css';
+import { LanguageContext } from '../../providers/language';
 
 SwiperCore.use([Navigation]);
 
 function ProjectsSection() {
+  const { language } = useContext(LanguageContext);
+
   return (
     <ProjectSectionStyle>
       <div className="container">
-        <SectionTitle heading="Projects" subheading="Some of my recent works" />
+        <SectionTitle
+          heading={language ? 'Projetos' : 'Projects'}
+          subheading={
+            language ? 'Trabalhos recentes...' : 'Some of my recent works'
+          }
+        />
         <div className="projects__allItems">
           <Swiper
             spaceBetween={30}
@@ -33,19 +43,34 @@ function ProjectsSection() {
               },
             }}
           >
-            {projects.map((project, index) => {
-              if (index >= 5) return;
-              return (
-                <SwiperSlide key={project.id}>
-                  <ProjectItem
-                    title={project.name}
-                    img={project.img}
-                    desc={project.desc}
-                    link={project.link}
-                  />
-                </SwiperSlide>
-              );
-            })}
+            {language &&
+              projetos.map((project, index) => {
+                if (index >= 5) return;
+                return (
+                  <SwiperSlide key={project.id}>
+                    <ProjectItem
+                      title={project.name}
+                      img={project.img}
+                      desc={project.desc}
+                      link={project.link}
+                    />
+                  </SwiperSlide>
+                );
+              })}
+            {!language &&
+              projects.map((project, index) => {
+                if (index >= 5) return;
+                return (
+                  <SwiperSlide key={project.id}>
+                    <ProjectItem
+                      title={project.name}
+                      img={project.img}
+                      desc={project.desc}
+                      link={project.link}
+                    />
+                  </SwiperSlide>
+                );
+              })}
           </Swiper>
         </div>
       </div>

@@ -7,30 +7,32 @@ import Projects from './pages/Projects';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
 // import SmoothScrollbar from './components/SmoothScrollbar';
+import { LanguageProvider } from './providers/language';
 
 export default function App() {
   return (
     <>
-      <Router>
-        <NavMenu />
-
-        <ScrollToTop />
-        <Switch>
-          <Route exact path="/">
-            <Home />
-          </Route>
-          <Route path="/about">
-            <About />
-          </Route>
-          <Route path="/projects">
-            <Projects />
-          </Route>
-          <Route path="/contact">
-            <Contact />
-          </Route>
-        </Switch>
-        <Footer />
-      </Router>
+      <LanguageProvider>
+        <Router>
+          <NavMenu />
+          <ScrollToTop />
+          <Switch>
+            <Route exact path="/">
+              <Home />
+            </Route>
+            <Route path="/about">
+              <About />
+            </Route>
+            <Route path="/projects">
+              <Projects />
+            </Route>
+            <Route path="/contact">
+              <Contact />
+            </Route>
+          </Switch>
+          <Footer />
+        </Router>
+      </LanguageProvider>
     </>
   );
 }

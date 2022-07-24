@@ -55,18 +55,9 @@ function About() {
 
           <div className="about__info__item">
             <h1 className="about__info__heading">My Skills</h1>
-            <AboutInfoItem
-              title="FrontEnd"
-              items={['HTML', 'CSS', 'JavaScript', 'React', 'Redux']}
-            />
-            <AboutInfoItem
-              title="BackEnd"
-              items={['Python', 'Express', 'Node']}
-            />
-            <AboutInfoItem
-              title="CSS Frameworks"
-              items={['Bootstrap', 'Tailwind CSS', 'SASS', 'Styled Components']}
-            />
+            <AboutInfoItem title="FrontEnd" items={['CSS', 'JS', 'React']} />
+            <AboutInfoItem title="BackEnd" items={['Python', 'Express']} />
+            <AboutInfoItem title="CSS" items={['Bootstrap', 'Tailwind']} />
           </div>
         </div>
       </div>

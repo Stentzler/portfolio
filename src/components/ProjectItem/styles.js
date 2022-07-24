@@ -10,14 +10,21 @@ export const ProjectItemStyles = styled.div`
     border: 3px solid var(--gray-2);
     img {
       height: 100%;
+      &:hover {
+        cursor: default;
+      }
     }
   }
 
   .projectItem__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     margin-top: 1rem;
     background-color: var(--deep-dark);
     padding: 1rem;
     border-radius: 12px;
+    min-height: 220px;
   }
   .projectItem__title {
     font-size: 2.2rem;

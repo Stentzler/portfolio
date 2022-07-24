@@ -1,9 +1,12 @@
 import { NavLink } from 'react-router-dom';
 import { MdMenu, MdClose } from 'react-icons/md';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { NavMenuStyles } from './styles';
+import { LanguageContext } from '../../providers/language';
 
 function NavMenu() {
+  const { language, setLanguage } = useContext(LanguageContext);
+
   const [showNav, setShowNav] = useState(false);
 
   return (
@@ -58,7 +61,7 @@ function NavMenu() {
             onKeyDown={() => setShowNav(!showNav)}
             tabIndex={0}
           >
-            Projects
+            {language ? 'Projetos' : 'Projects'}
           </NavLink>
         </li>
         <li>
@@ -69,8 +72,20 @@ function NavMenu() {
             onKeyDown={() => setShowNav(!showNav)}
             tabIndex={0}
           >
-            Contact
+            {language ? 'Contato' : 'Contact'}
           </NavLink>
+        </li>
+        <li>
+          <button
+            type="button"
+            onClick={() => {
+              setLanguage(!language);
+              setShowNav(!showNav);
+            }}
+            className="btn-lang"
+          >
+            {language ? 'English' : 'PT-BR'}
+          </button>
         </li>
       </ul>
     </NavMenuStyles>

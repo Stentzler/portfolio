@@ -44,7 +44,7 @@ export const AboutPageStyles = styled.div`
   }
 
   .about__info__items {
-    margin-top: 12rem;
+    margin-top: 6rem;
   }
 
   .about__info__item {
@@ -57,11 +57,16 @@ export const AboutPageStyles = styled.div`
   }
 
   @media only screen and (max-width: 768px) {
-    padding: 10rem 0;
+    margin-top: 10rem;
 
     .top-section {
       flex-direction: column;
       gap: 5rem;
+    }
+
+    .about__info__item {
+      max-width: 100%;
+      gap: 3rem;
     }
 
     .about__subheading {
