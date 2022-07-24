@@ -5,32 +5,31 @@ import Home from './pages/Home';
 import Contact from './pages/Contact';
 import Projects from './pages/Projects';
 import Footer from './components/Footer';
-// import ScrollToTop from './components/ScrollToTop';
-import SmoothScrollbar from './components/SmoothScrollbar';
+import ScrollToTop from './components/ScrollToTop';
+// import SmoothScrollbar from './components/SmoothScrollbar';
 
 export default function App() {
   return (
     <>
       <Router>
         <NavMenu />
-        <SmoothScrollbar>
-          {/* <ScrollToTop /> */}
-          <Switch>
-            <Route exact path="/">
-              <Home />
-            </Route>
-            <Route path="/about">
-              <About />
-            </Route>
-            <Route path="/projects">
-              <Projects />
-            </Route>
-            <Route path="/contact">
-              <Contact />
-            </Route>
-          </Switch>
-          <Footer />
-        </SmoothScrollbar>
+
+        <ScrollToTop />
+        <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route path="/about">
+            <About />
+          </Route>
+          <Route path="/projects">
+            <Projects />
+          </Route>
+          <Route path="/contact">
+            <Contact />
+          </Route>
+        </Switch>
+        <Footer />
       </Router>
     </>
   );

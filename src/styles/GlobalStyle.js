@@ -41,10 +41,29 @@ const GlobalStyles = createGlobalStyle`
 
 /* Smooth Scroll  */
 
-  [data-scrollbar] {
+body::-webkit-scrollbar{
+  width: 8px;
+
+}
+body::-webkit-scrollbar-track{
+  background: transparent;
+}
+body::-webkit-scrollbar-thumb{
+  background-color: var(--gray-1);
+  border-radius: 8px
+}
+
+@supports (scrollbar-color: var(--gray-1)){
+  *{
+    scrollbar-color: var(--gray-1) transparent;
+  }
+}
+
+
+
+  /* [data-scrollbar] {
     height: 100vh;
     overflow: hidden;
-    
     background-color: var(--gray-1);
     .scroll-content {
       background-color: var(--dark-bg);
@@ -55,6 +74,6 @@ const GlobalStyles = createGlobalStyle`
         background: var(--gray-1);
       }
     }
-  }
+  } */
 `;
 export default GlobalStyles;
