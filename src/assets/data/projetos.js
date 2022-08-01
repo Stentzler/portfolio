@@ -1,50 +1,45 @@
 import { v4 as uuidv4 } from 'uuid';
-import ProjectImg from '../images/projectImg.png';
-import UTrackerImg from '../images/utracker.jpg';
-import GreenCtgImg from '../images/greenctg.jpg';
-import CoinTrackerImg from '../images/cointracker.jpg';
-import CavinImg from '../images/cavinimg.jpg';
+
+import KenzieFood from '../images/KenzieFood.png';
+import Breshoppe from '../images/breshoppe.png';
+import CatchTheInsect from '../images/catch.png';
+import EdgeLedger from '../images/edge.png';
 
 const projetos = [
   {
     id: uuidv4(),
-    name: 'U Tracker',
-    desc:
-      'Uma aplicação para monitorar toda sua data em um só local. Eu desenvolvi o app para versão mobile',
-    img: UTrackerImg,
-    link: 'https://www.google.com',
+    name: 'Edge Ledger',
+    desc: 'Projeto desenvolvido com o propósito de aprimorar meu CSS e HTML.',
+    img: EdgeLedger,
+    link: 'https://stentzler.github.io/EdgeLedger/',
+    repo: 'https://github.com/Stentzler/EdgeLedger',
   },
   {
     id: uuidv4(),
-    name: 'Green CTG',
+    name: 'Kenzie Food',
     desc:
-      'Um app que concientiza as pessoas de como elas podem deixar a cidade onde vivem mais verde.',
-    img: GreenCtgImg,
-    link: 'https://www.google.com',
+      'Projeto utilizando HTML, CSS e Vanilla JS. Simula um e-commerce onde o usuário pode comprar e cadastrar produtos através de uma API',
+    img: KenzieFood,
+    link: 'https://stentzler.github.io/KenzieFood/',
+    repo: 'https://github.com/Stentzler/KenzieFood',
   },
   {
     id: uuidv4(),
-    name: 'Coin Tracker',
+    name: 'Breshopee',
     desc:
-      'Com esse app você pode monitorar a valorização de qualquer moeda. Este app também sugere alguns investimentos que estão em alta',
-    img: CoinTrackerImg,
-    link: 'https://www.google.com',
+      'Projeto React que simula um e-commerce de roupas usadas onde os usuários podem comprar produtos bem como cadastrar produtos para serem vendidos através de uma API. ',
+    img: Breshoppe,
+    link: 'https://m3-capstone-proj.vercel.app/',
+    repo: 'https://github.com/noomloof/m3-capstone-proj',
   },
   {
     id: uuidv4(),
-    name: "Cavin's Portfolio",
+    name: 'Catch The Insect',
     desc:
-      'Portfolio de Cavin jr. Artista de New york city. Foi utilizado Next.js e Gatsby.js neste projeto',
-    img: CavinImg,
-    link: 'https://www.google.com',
-  },
-  {
-    id: uuidv4(),
-    name: 'Tracking Soft',
-    desc:
-      'Um software que permite ao usúario medir o desempenho de um website. Este software também traz algumas dicas de como melhorar a perfomance do website.',
-    img: ProjectImg,
-    link: 'https://www.google.com',
+      'Projeto desenvolvido enquanto estudava JS vanilla. Tentei desenvolver o sistema de um jogo simples no HTML',
+    img: CatchTheInsect,
+    link: 'https://stentzler.github.io/Vanilla-JS/',
+    repo: 'https://github.com/Stentzler/Vanilla-JS',
   },
 ];
 

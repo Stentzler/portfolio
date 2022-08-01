@@ -7,6 +7,7 @@ function ProjectItem({
   title = 'Project Name',
   desc = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat magni!',
   link,
+  repo = 'not available',
 }) {
   return (
     <ProjectItemStyles>
@@ -26,6 +27,16 @@ function ProjectItem({
             className="projectButton"
           >
             Open Project
+          </a>
+        )}
+        {repo && (
+          <a
+            href={repo}
+            target="_blank"
+            rel="noreferrer"
+            className="projectButton"
+          >
+            Open gitHub repository
           </a>
         )}
       </div>

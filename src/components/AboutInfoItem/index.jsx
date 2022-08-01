@@ -16,7 +16,13 @@ const AboutItemStyles = styled.div`
     display: flex;
     gap: 1.5rem;
     position: absolute;
-    left: 13rem;
+    left: 16rem;
+  }
+
+  svg {
+    font-size: 2.5rem;
+    margin: auto;
+    transform: translateY(2px);
   }
 
   .item {
@@ -31,11 +37,16 @@ const AboutItemStyles = styled.div`
     gap: 1rem;
 
     .item {
-      position: initial;
+      position: relative;
+      top: -9px;
       gap: 1rem;
     }
     .title {
       font-size: 2rem;
+    }
+
+    .items {
+      left: 13rem;
     }
   }
 `;

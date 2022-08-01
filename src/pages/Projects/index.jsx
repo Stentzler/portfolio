@@ -1,13 +1,27 @@
 import { MdSearch } from 'react-icons/md';
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import SectionTitle from '../../components/SectionTitle';
 import ProjectItem from '../../components/ProjectItem';
 import { ProjectStyles } from './styles';
 import ProjectInfo from '../../assets/data/projects';
+import Projetos from '../../assets/data/projetos';
+import { LanguageContext } from '../../providers/language';
 
 function Projects() {
+  const { language } = useContext(LanguageContext);
+
   const [searchText, setSearchText] = useState('');
-  const [projectData, setProjectData] = useState(ProjectInfo);
+  const [projectData, setProjectData] = useState(
+    language ? Projetos : ProjectInfo
+  );
+
+  useEffect(() => {
+    if (language) {
+      setProjectData(Projetos);
+    } else {
+      setProjectData(ProjectInfo);
+    }
+  }, [language]);
 
   useEffect(() => {
     if (searchText !== '') {
@@ -30,12 +44,15 @@ function Projects() {
   return (
     <ProjectStyles>
       <div className="container">
-        <SectionTitle heading="Projects" subheading="My recent works" />
+        <SectionTitle
+          heading={language ? 'Projetos' : 'Projects'}
+          subheading={language ? 'Trabalhos recentes' : 'My recent works'}
+        />
         <div className="projects__searchBar">
           <div className="form">
             <input
               type="text"
-              placeholder="Project Name"
+              placeholder={language ? 'Nome do Projeto' : 'Project Name'}
               value={searchText}
               onChange={handleChange}
             />
@@ -50,6 +67,7 @@ function Projects() {
               desc={item.desc}
               img={item.img}
               link={item.link}
+              repo={item.repo}
             />
           ))}
         </div>

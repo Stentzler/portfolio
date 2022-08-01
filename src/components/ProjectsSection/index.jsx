@@ -53,6 +53,7 @@ function ProjectsSection() {
                       img={project.img}
                       desc={project.desc}
                       link={project.link}
+                      repo={project.repo}
                     />
                   </SwiperSlide>
                 );
@@ -67,6 +68,7 @@ function ProjectsSection() {
                       img={project.img}
                       desc={project.desc}
                       link={project.link}
+                      repo={project.repo}
                     />
                   </SwiperSlide>
                 );

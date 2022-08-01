@@ -43,9 +43,8 @@ export const ProjectItemStyles = styled.div`
 
   .projectButton {
     display: inline-block;
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     text-decoration: underline;
-    margin: 2rem 0;
     color: royalblue;
   }
 `;

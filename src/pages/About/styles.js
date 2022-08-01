@@ -44,11 +44,16 @@ export const AboutPageStyles = styled.div`
   }
 
   .about__info__items {
-    margin-top: 6rem;
+    margin-top: 8rem;
+    display: flex;
+    flex-direction: column;
+    gap: 10rem;
   }
 
   .about__info__item {
-    margin-top: 10rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
   }
 
   .about__info__heading {

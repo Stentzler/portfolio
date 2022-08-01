@@ -1,8 +1,11 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import emailjs from 'emailjs-com';
 import { FormStyle } from './styles';
+import { LanguageContext } from '../../providers/language';
 
 function ContactForm() {
+  const { language } = useContext(LanguageContext);
+
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
@@ -31,7 +34,7 @@ function ContactForm() {
       <FormStyle onSubmit={sendEmail}>
         <div className="form-group">
           <label htmlFor="name">
-            Your Name:
+            {language ? 'Seu nome:' : 'Your Name:'}
             <input
               type="text"
               id="name"
@@ -44,7 +47,7 @@ function ContactForm() {
 
         <div className="form-group">
           <label htmlFor="email">
-            Your Email:
+            {language ? 'Seu Email:' : 'Your Email:'}
             <input
               type="email"
               id="email"
@@ -57,7 +60,7 @@ function ContactForm() {
 
         <div className="form-group">
           <label htmlFor="subject">
-            Subject:
+            {language ? 'Assunto:' : 'Subject:'}
             <input
               type="text"
               id="subject"
@@ -70,7 +73,7 @@ function ContactForm() {
 
         <div className="form-group">
           <label htmlFor="Message">
-            Your Message:
+            {language ? 'Sua Mensagem' : 'Your Message:'}
             <textarea
               type="text"
               id="Message"
@@ -80,7 +83,7 @@ function ContactForm() {
             />
           </label>
         </div>
-        <button type="submit">Send</button>
+        <button type="submit">{language ? 'Enviar' : 'Send'}</button>
       </FormStyle>
     </div>
   );
