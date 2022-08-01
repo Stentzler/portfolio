@@ -92,7 +92,7 @@ function About() {
               items={[<FaNodeJs />, <SiTypescript />, <SiMongodb />]}
             />
             <AboutInfoItem
-              title="Outros"
+              title={language ? 'Outros' : 'Tools'}
               items={[<SiTailwindcss />, <SiBootstrap />, <SiGithub />]}
             />
           </div>
