@@ -7,7 +7,7 @@ import {
   SiTypescript,
   SiMongodb,
   SiBootstrap,
-  SiCss3,
+  SiGithub,
 } from 'react-icons/si';
 import Ptext from '../../components/Ptext';
 import Button from '../../components/Button';
@@ -92,8 +92,8 @@ function About() {
               items={[<FaNodeJs />, <SiTypescript />, <SiMongodb />]}
             />
             <AboutInfoItem
-              title="CSS"
-              items={[<SiTailwindcss />, <SiBootstrap />, <SiCss3 />]}
+              title="Outros"
+              items={[<SiTailwindcss />, <SiBootstrap />, <SiGithub />]}
             />
           </div>
         </div>
