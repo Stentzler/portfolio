@@ -61,8 +61,27 @@ export const AboutPageStyles = styled.div`
     text-transform: uppercase;
   }
 
+  a {
+    font-size: 20px;
+    font-weight: bold;
+    padding: 16px 28px;
+    border: 2px solid var(--gray-1);
+    border-radius: 12px;
+    background-color: var(--gray-2);
+    transition: all 0.5s;
+    &:hover {
+      background-color: var(--gray-1);
+      color: var(--gray-2);
+    }
+  }
+
   @media only screen and (max-width: 768px) {
     margin-top: 10rem;
+
+    a {
+      margin: 0 auto;
+      text-align: center;
+    }
 
     .top-section {
       flex-direction: column;

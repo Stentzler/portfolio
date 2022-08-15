@@ -30,7 +30,7 @@ const projects = [
       'React project. Fictional second-hand clothes e-commerce where the user is able to purchase clothes as well as selling own products trhough an API',
     img: Breshoppe,
     link: 'https://m3-capstone-proj.vercel.app/',
-    repo: 'https://github.com/noomloof/m3-capstone-proj',
+    repo: 'https://github.com/Stentzler/Breshoppe',
   },
   {
     id: uuidv4(),

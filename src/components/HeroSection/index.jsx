@@ -42,7 +42,7 @@ function HeroSection() {
               <ul>
                 <li>
                   <a
-                    href="https://www.linkedin.com/in/vinicius-stentzler-garcia-de-lima-287130230/"
+                    href="https://www.linkedin.com/in/vinicius-stentzler/"
                     target="_blank"
                     rel="noreferrer"
                   >

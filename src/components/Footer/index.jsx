@@ -124,8 +124,7 @@ function Footer() {
             links={[
               {
                 title: 'LinkedIn',
-                path:
-                  'https://www.linkedin.com/in/vinicius-stentzler-garcia-de-lima-287130230/',
+                path: 'https://www.linkedin.com/in/vinicius-stentzler/',
                 link: false,
               },
             ]}

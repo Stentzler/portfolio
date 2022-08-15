@@ -20,8 +20,8 @@ function AboutSection() {
           />
           <Ptext>
             {language
-              ? 'Me chamo Vinicius Lima, desenvolvedor Front-End há aproximadamente um ano. Iniciei formalmente meus estudos em Janeiro de 2022 na Kenzie Academy Brasil, dentro deste período tive a opurtunidade de aprofundar meus conhecimentos como Full-Stack dev e trabalhar como coach das turmar anteriores por aproximadamente seis meses.'
-              : "I am Vinicius Lima, I've been studying Font-end development for about an year. I followed a full-stack course at Kenzie Academy Brazil, where I also had the opportunity to work as coach for the students that were starting their studies"}
+              ? 'Me chamo Vinicius Lima, desenvolvedor Front-End há aproximadamente um ano. Iniciei formalmente meus estudos em Janeiro de 2022 na Kenzie Academy Brasil, dentro deste período tive a opurtunidade de aprofundar meus conhecimentos como Full-Stack dev. Clique no botão abaixo para me conhecer melhor. '
+              : "I am Vinicius Lima, I've been studying Font-end development for about an year. I followed a full-stack course at Kenzie Academy Brazil... Click on the button below to read more"}
           </Ptext>
           <div className="aboutSection__buttons">
             <Button

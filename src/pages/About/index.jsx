@@ -9,8 +9,8 @@ import {
   SiBootstrap,
   SiGithub,
 } from 'react-icons/si';
+
 import Ptext from '../../components/Ptext';
-import Button from '../../components/Button';
 import ContactBanner from '../../components/ContactBanner';
 import AboutImg from '../../assets/images/about-page-img.png';
 import { AboutPageStyles } from './styles';
@@ -32,11 +32,17 @@ function About() {
             <div className="about__info">
               <Ptext>
                 {language
-                  ? 'Me chamo Vinicius Lima, estudo programação Front-End há aproximadamente um ano. Iniciei formalmente meus estudos em Janeiro de 2022 na Kenzie Academy Brasil, dentro deste período tive a opurtunidade de aprofundar meus conhecimentos tanto no front como no back-end, e também, trabalhar como coach das turmas anteriores a minha por aproximadamente seis meses.'
-                  : "I am Vinicius Lima, I've been studying Font-end development for about an year. I followed a full-stack course at Kenzie Academy Brazil, where I also had the opportunity to work as coach for the students that were starting their studies"}
+                  ? 'Iniciei meus estudos em tecnologia por incentivo do meu irmão mais velho, que me ensinou lógica da programação através da linguagem Python. Logo depois entrei na Kenzie Academy com o intuito de aprofundar meus conhecimentos relacionados às tecnologias de front e back-end, aprendi a utilizar HTML, CSS, JavaScript, React, Styled Components, Redux, Express, Node.js, Postgres, Docker, TypeScript. Acredito que a área da tecnologia é bastante abrangente e se renova rapidamente, com isso é necessário estar atento às tendências do mercado e sempre disposto a aprender. Esta necessidade de estar sempre se aperfeiçoando e buscando novos conhecimentos é o que me cativou nesta área.'
+                  : "I am Vinicius Lima, I've been studying Font-end development for about an year. I followed a full-stack course at Kenzie Academy Brazil, where I also had the opportunity to learn HTML, CSS, JavaScript, React, Styled Components, Redux, Express, Node.js, Postgres, Docker, TypeScript. Technology is evolving at a fast peace and I am always seeking for new technologies to learn in order to improve the quality of my work."}
               </Ptext>
             </div>
-            <Button btnText="Download CV" btnLink="#" />
+            <a
+              href="https://drive.google.com/file/d/10gk2_9-A1eKgHVy_emdb0mguKq0nS85w/view?usp=sharing"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Download CV
+            </a>
           </div>
           <div className="right">
             <img src={AboutImg} alt="Vinicius Img" />
@@ -47,14 +53,6 @@ function About() {
             <h1 className="about__info__heading">
               {language ? 'Educação' : 'Education'}
             </h1>
-            <AboutInfoItem
-              title={language ? 'Escola' : 'School'}
-              items={
-                language
-                  ? ['Ensino Médio Dom Bosco, Curitiba-PR']
-                  : ['Dom Bosco Highschool, Curitiba-PR']
-              }
-            />
             <AboutInfoItem
               title={language ? 'Graduação' : 'College'}
               items={

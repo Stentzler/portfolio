@@ -30,7 +30,7 @@ const projetos = [
       'Projeto React que simula um e-commerce de roupas usadas onde os usuários podem comprar produtos bem como cadastrar produtos para serem vendidos através de uma API. ',
     img: Breshoppe,
     link: 'https://m3-capstone-proj.vercel.app/',
-    repo: 'https://github.com/noomloof/m3-capstone-proj',
+    repo: 'https://github.com/Stentzler/Breshoppe',
   },
   {
     id: uuidv4(),
