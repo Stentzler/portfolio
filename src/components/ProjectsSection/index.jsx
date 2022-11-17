@@ -45,7 +45,7 @@ function ProjectsSection() {
           >
             {language &&
               projetos.map((project, index) => {
-                if (index >= 5) return;
+                if (index >= 8) return;
                 return (
                   <SwiperSlide key={project.id}>
                     <ProjectItem
@@ -60,7 +60,7 @@ function ProjectsSection() {
               })}
             {!language &&
               projects.map((project, index) => {
-                if (index >= 5) return;
+                if (index >= 8) return;
                 return (
                   <SwiperSlide key={project.id}>
                     <ProjectItem

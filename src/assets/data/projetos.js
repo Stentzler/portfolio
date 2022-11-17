@@ -17,19 +17,11 @@ const projetos = [
   },
   {
     id: uuidv4(),
-    name: 'Kenzie_Food (HTML/CSS/JS)',
-    desc: 'Projeto utilizando HTML, CSS e Vanilla JS. Simula um e-commerce onde o usuário pode comprar e cadastrar produtos através de uma API',
-    img: JSVanilla,
-    link: 'https://stentzler.github.io/KenzieFood/',
-    repo: 'https://github.com/Stentzler/KenzieFood',
-  },
-  {
-    id: uuidv4(),
-    name: 'Breshopee (React)',
-    desc: 'Projeto React que simula um e-commerce de roupas usadas onde os usuários podem comprar produtos bem como cadastrar produtos para serem vendidos através de uma API. ',
+    name: 'GitHub_Search (React)',
+    desc: 'Desenvolvido com React, Tailwind_CSS e Daisy_UI. Faz a busca de um profile no github e exibe suas credenciais ',
     img: React,
-    link: 'https://m3-capstone-proj.vercel.app/',
-    repo: 'https://github.com/Stentzler/Breshoppe',
+    link: 'https://github-finder-lyart-eight.vercel.app/',
+    repo: 'https://github.com/Stentzler/Github_search_app',
   },
   {
     id: uuidv4(),
@@ -38,6 +30,14 @@ const projetos = [
     img: Node,
     link: 'https://github.com/Stentzler/CoDelivery/blob/develop/README.md',
     repo: 'https://github.com/Stentzler/CoDelivery',
+  },
+  {
+    id: uuidv4(),
+    name: 'Breshopee (React)',
+    desc: 'Projeto React que simula um e-commerce de roupas usadas onde os usuários podem comprar produtos bem como cadastrar produtos para serem vendidos através de uma API. ',
+    img: React,
+    link: 'https://m3-capstone-proj.vercel.app/',
+    repo: 'https://github.com/Stentzler/Breshoppe',
   },
   {
     id: uuidv4(),
@@ -57,11 +57,11 @@ const projetos = [
   },
   {
     id: uuidv4(),
-    name: 'GitHub_Search (React)',
-    desc: 'Desenvolvido com React, Tailwind_CSS e Daisy_UI. Faz a busca de um profile no github e exibe suas credenciais ',
-    img: React,
-    link: 'https://github-finder-lyart-eight.vercel.app/',
-    repo: 'https://github.com/Stentzler/Github_search_app',
+    name: 'Kenzie_Food (HTML/CSS/JS)',
+    desc: 'Projeto utilizando HTML, CSS e Vanilla JS. Simula um e-commerce onde o usuário pode comprar e cadastrar produtos através de uma API',
+    img: JSVanilla,
+    link: 'https://stentzler.github.io/KenzieFood/',
+    repo: 'https://github.com/Stentzler/KenzieFood',
   },
 ];
 

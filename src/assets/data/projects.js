@@ -16,19 +16,11 @@ const projects = [
   },
   {
     id: uuidv4(),
-    name: 'Kenzie Food (HTML/CSS/JS)',
-    desc: 'Developed HTML, CSS & Vanilla JS. fictional e-commerce website where you can purchase produts and register your own products for sale',
-    img: JSVanilla,
-    link: 'https://stentzler.github.io/KenzieFood/',
-    repo: 'https://github.com/Stentzler/KenzieFood',
-  },
-  {
-    id: uuidv4(),
-    name: 'Breshopee (React)',
-    desc: 'React project. Fictional second-hand clothes e-commerce where the user is able to purchase clothes as well as selling own products trhough an API',
+    name: 'GitHub_Search (React)',
+    desc: 'Developed with React, Tailwind_CSS e Daisy_UI. Request a gitHub user profile and display it. ',
     img: React,
-    link: 'https://m3-capstone-proj.vercel.app/',
-    repo: 'https://github.com/Stentzler/Breshoppe',
+    link: 'https://github-finder-lyart-eight.vercel.app/',
+    repo: 'https://github.com/Stentzler/Github_search_app',
   },
   {
     id: uuidv4(),
@@ -37,6 +29,14 @@ const projects = [
     img: Node,
     link: 'https://github.com/Stentzler/CoDelivery/blob/develop/README.md',
     repo: 'https://github.com/Stentzler/CoDelivery',
+  },
+  {
+    id: uuidv4(),
+    name: 'Breshopee (React)',
+    desc: 'React project. Fictional second-hand clothes e-commerce where the user is able to purchase clothes as well as selling own products trhough an API',
+    img: React,
+    link: 'https://m3-capstone-proj.vercel.app/',
+    repo: 'https://github.com/Stentzler/Breshoppe',
   },
   {
     id: uuidv4(),
@@ -56,11 +56,11 @@ const projects = [
   },
   {
     id: uuidv4(),
-    name: 'GitHub_Search (React)',
-    desc: 'Developed with React, Tailwind_CSS e Daisy_UI. Request a gitHub user profile and display it. ',
-    img: React,
-    link: 'https://github-finder-lyart-eight.vercel.app/',
-    repo: 'https://github.com/Stentzler/Github_search_app',
+    name: 'Kenzie Food (HTML/CSS/JS)',
+    desc: 'Developed HTML, CSS & Vanilla JS. fictional e-commerce website where you can purchase produts and register your own products for sale',
+    img: JSVanilla,
+    link: 'https://stentzler.github.io/KenzieFood/',
+    repo: 'https://github.com/Stentzler/KenzieFood',
   },
 ];
 
