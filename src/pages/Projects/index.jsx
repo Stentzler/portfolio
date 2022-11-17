@@ -24,13 +24,23 @@ function Projects() {
   }, [language]);
 
   useEffect(() => {
-    if (searchText !== '') {
+    if (searchText !== '' && !language) {
       setProjectData(() =>
         ProjectInfo.filter((item) =>
           item.name.toLowerCase().match(searchText.toLowerCase())
         )
       );
     }
+
+    if (searchText !== '' && language) {
+      setProjectData(() =>
+        Projetos.filter((item) =>
+          item.name.toLowerCase().match(searchText.toLowerCase())
+        )
+      );
+    }
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchText]);
 
   function handleChange(e) {

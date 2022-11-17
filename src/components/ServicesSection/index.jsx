@@ -1,10 +1,10 @@
+import { IoLogoJavascript, IoLogoReact } from 'react-icons/io5';
 import {
-  IoLogoJavascript,
-  IoLogoReact,
-  IoLogoHtml5,
-  IoLogoCss3,
-} from 'react-icons/io5';
-import { SiTailwindcss, SiRedux } from 'react-icons/si';
+  SiNodedotjs,
+  SiTypescript,
+  SiPostgresql,
+  SiDjango,
+} from 'react-icons/si';
 import { useContext } from 'react';
 import SectionTitle from '../SectionTitle';
 import ServicesSectionItem from '../ServicesSectionItem';
@@ -26,39 +26,39 @@ function ServicesSection() {
           <ServicesSectionItem
             icon={<IoLogoJavascript />}
             title="JS"
-            description="JavaScript developer"
+            description="Front-end"
           />
           <ServicesSectionItem
             icon={<IoLogoReact />}
             title="React"
-            description="React developer"
+            description="Front-end"
           />
           <ServicesSectionItem
-            icon={<SiRedux />}
-            title="Redux"
-            description="Redux"
+            icon={<SiTypescript />}
+            title="TS"
+            description="Front-end"
           />
           {window.innerWidth > 768 && (
             <ServicesSectionItem
-              icon={<IoLogoHtml5 />}
-              title="HTML"
-              description="HTML"
+              icon={<SiNodedotjs />}
+              title="Node.JS"
+              description="Back-end"
             />
           )}
 
           {window.innerWidth > 768 && (
             <ServicesSectionItem
-              icon={<IoLogoCss3 />}
-              title="CSS"
-              description="CSS"
+              icon={<SiPostgresql />}
+              title="PostgreSQL"
+              description="Back-end"
             />
           )}
 
           {window.innerWidth > 768 && (
             <ServicesSectionItem
-              icon={<SiTailwindcss />}
-              title="Tailwind CSS"
-              description="Tailwind CSS"
+              icon={<SiDjango />}
+              title="Django framework"
+              description="Back-end"
             />
           )}
         </div>

@@ -31,7 +31,7 @@ function ContactForm() {
 
   return (
     <div>
-      <FormStyle onSubmit={sendEmail}>
+      <FormStyle onSubmit={() => sendEmail}>
         <div className="form-group">
           <label htmlFor="name">
             {language ? 'Seu nome:' : 'Your Name:'}

@@ -27,7 +27,7 @@ function HeroSection() {
             <img src={HeroImg} alt="hero" />
           </div>
           <div className="hero__info">
-            <Ptext>Front-End Developer</Ptext>
+            <Ptext>Full-Stack Developer</Ptext>
             <Button
               btnLink="/projects"
               btnText={language ? 'Meus projetos' : 'Check my projects'}

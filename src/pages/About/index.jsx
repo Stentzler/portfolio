@@ -1,13 +1,15 @@
 import { useContext } from 'react';
 import { FaReact, FaNodeJs } from 'react-icons/fa';
 import {
-  SiRedux,
   SiTailwindcss,
   SiJavascript,
   SiTypescript,
   SiMongodb,
   SiBootstrap,
   SiGithub,
+  SiPostgresql,
+  SiDjango,
+  SiVuedotjs,
 } from 'react-icons/si';
 
 import Ptext from '../../components/Ptext';
@@ -32,12 +34,12 @@ function About() {
             <div className="about__info">
               <Ptext>
                 {language
-                  ? 'Iniciei meus estudos em tecnologia por incentivo do meu irmão mais velho, que me ensinou lógica da programação através da linguagem Python. Logo depois entrei na Kenzie Academy com o intuito de aprofundar meus conhecimentos relacionados às tecnologias de front e back-end, aprendi a utilizar HTML, CSS, JavaScript, React, Styled Components, Redux, Express, Node.js, Postgres, Docker, TypeScript. Acredito que a área da tecnologia é bastante abrangente e se renova rapidamente, com isso é necessário estar atento às tendências do mercado e sempre disposto a aprender. Esta necessidade de estar sempre se aperfeiçoando e buscando novos conhecimentos é o que me cativou nesta área.'
-                  : "I am Vinicius Lima, I've been studying Font-end development for about an year. I followed a full-stack course at Kenzie Academy Brazil, where I also had the opportunity to learn HTML, CSS, JavaScript, React, Styled Components, Redux, Express, Node.js, Postgres, Docker, TypeScript. Technology is evolving at a fast peace and I am always seeking for new technologies to learn in order to improve the quality of my work."}
+                  ? 'Iniciei meus estudos em tecnologia por incentivo do meu irmão mais velho, que me ensinou lógica da programação através da linguagem Python. Logo depois entrei na Kenzie Academy com o intuito de aprofundar meus conhecimentos relacionados às tecnologias de front e back-end, melhorei meu conhecimento HTML, CSS, JavaScript, React, Node.js, Postgresql, TypeScript, Python, Django entre outras libraries e frameworks relacionados. Acredito que a área da tecnologia é bastante abrangente e se renova rapidamente, com isso é necessário estar atento às tendências do mercado e sempre disposto a aprender. Esta necessidade de estar sempre se aperfeiçoando e buscando novos conhecimentos é o que me cativou nesta área.'
+                  : "I am Vinicius Lima, I've been studying Font-end development for about an year. I followed a full-stack course at Kenzie Academy Brazil, where I also had the opportunity to learn HTML, CSS, JavaScript, React, Express, Node.js, Postgres, Docker, TypeScript, Python, Django and some related libraries/frameworks. Technology is evolving at a fast peace and I am always seeking for new technologies to learn in order to improve the quality of my work."}
               </Ptext>
             </div>
             <a
-              href="https://drive.google.com/file/d/10gk2_9-A1eKgHVy_emdb0mguKq0nS85w/view?usp=sharing"
+              href="https://drive.google.com/file/d/1VV4NIkIztzEJR9NGVXHoajW2D_9ylH22/view?usp=sharing"
               target="_blank"
               rel="noreferrer"
             >
@@ -83,11 +85,11 @@ function About() {
             <h1 className="about__info__heading">Skills</h1>
             <AboutInfoItem
               title="FrontEnd"
-              items={[<FaReact />, <SiRedux />, <SiJavascript />]}
+              items={[<FaReact />, <SiVuedotjs />, <SiTypescript />]}
             />
             <AboutInfoItem
               title="BackEnd"
-              items={[<FaNodeJs />, <SiTypescript />, <SiMongodb />]}
+              items={[<FaNodeJs />, <SiDjango />, <SiPostgresql />]}
             />
             <AboutInfoItem
               title={language ? 'Outros' : 'Tools'}

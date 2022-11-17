@@ -26,7 +26,7 @@ export const HeroStyles = styled.div`
     .hero__name {
       font-size: 7rem;
       font-family: 'Montserrat SemiBold';
-      color: var(--white);
+      color: #fff;
     }
   }
 

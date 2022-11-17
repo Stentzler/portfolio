@@ -68,6 +68,7 @@ const FooterStyles = styled.footer`
 
 function Footer() {
   const { language } = useContext(LanguageContext);
+  const year = new Date().getFullYear();
 
   return (
     <FooterStyles>
@@ -111,8 +112,7 @@ function Footer() {
                 title: language
                   ? 'Curitiba, Paraná, Brasil'
                   : 'Curitiba, Paraná, Brazil',
-                path:
-                  'https://www.google.com/maps/place/Curitiba,+State+of+Paran%C3%A1/@-25.4532075,-49.3119538,13z/data=!4m13!1m7!3m6!1s0x94dce35351cdb3dd:0x6d2f6ba5bacbe809!2sCuritiba,+State+of+Paran%C3%A1!3b1!8m2!3d-25.4372382!4d-49.2699727!3m4!1s0x94dce35351cdb3dd:0x6d2f6ba5bacbe809!8m2!3d-25.4372382!4d-49.2699727',
+                path: 'https://www.google.com/maps/place/Curitiba,+State+of+Paran%C3%A1/@-25.4532075,-49.3119538,13z/data=!4m13!1m7!3m6!1s0x94dce35351cdb3dd:0x6d2f6ba5bacbe809!2sCuritiba,+State+of+Paran%C3%A1!3b1!8m2!3d-25.4372382!4d-49.2699727!3m4!1s0x94dce35351cdb3dd:0x6d2f6ba5bacbe809!8m2!3d-25.4372382!4d-49.2699727',
                 link: false,
               },
             ]}
@@ -127,13 +127,18 @@ function Footer() {
                 path: 'https://www.linkedin.com/in/vinicius-stentzler/',
                 link: false,
               },
+              {
+                title: 'GitHub',
+                path: 'https://github.com/Stentzler',
+                link: false,
+              },
             ]}
           />
         </div>
       </div>
       <div className="copyright">
         <div className="container">
-          <Ptext>&copy; 2022 - Vinicius Lima | Web Developer</Ptext>
+          <Ptext>&copy; {year} - Vinicius Lima | Web Developer</Ptext>
         </div>
       </div>
     </FooterStyles>

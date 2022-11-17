@@ -20,13 +20,13 @@ function AboutSection() {
           />
           <Ptext>
             {language
-              ? 'Me chamo Vinicius Lima, desenvolvedor Front-End há aproximadamente um ano. Iniciei formalmente meus estudos em Janeiro de 2022 na Kenzie Academy Brasil, dentro deste período tive a opurtunidade de aprofundar meus conhecimentos como Full-Stack dev. Clique no botão abaixo para me conhecer melhor. '
-              : "I am Vinicius Lima, I've been studying Font-end development for about an year. I followed a full-stack course at Kenzie Academy Brazil... Click on the button below to read more"}
+              ? 'Me chamo Vinicius Lima, desenvolvedor Web full-stack. Iniciei formalmente meus estudos em Janeiro de 2022 na Kenzie Academy Brasil, onde tive a opurtunidade de aprofundar meus conhecimentos como web developer. Clique no botão abaixo para me conhecer melhor. '
+              : "I am Vinicius Lima, I'm a Web full-stack developer. I followed a full-stack program at Kenzie Academy Brazil... Click on the button below to read more"}
           </Ptext>
           <div className="aboutSection__buttons">
             <Button
               btnLink="/projects"
-              btnText={language ? 'Projetos' : 'Works'}
+              btnText={language ? 'Projetos' : 'Projects'}
             />
             <Button
               btnLink="/about"
