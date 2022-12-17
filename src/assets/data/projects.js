@@ -1,5 +1,5 @@
 import { v4 as uuidv4 } from 'uuid';
-import JSVanilla from '../images/project_logos/js.png';
+import Mern from '../images/project_logos/mern.png';
 import React from '../images/project_logos/react.png';
 import Node from '../images/project_logos/node.png';
 import DJ from '../images/project_logos/dj.png';
@@ -21,6 +21,14 @@ const projects = [
     img: React,
     link: 'https://github-finder-lyart-eight.vercel.app/',
     repo: 'https://github.com/Stentzler/Github_search_app',
+  },
+  {
+    id: uuidv4(),
+    name: 'Support_App (Full-Stack)',
+    desc: 'Developed with MongoDB, Express, Node.JS e React. Fictional user support page that register an issue and saves it into a Mongo Database',
+    img: Mern,
+    link: 'https://frontend-iota-lilac-23.vercel.app/',
+    repo: 'https://github.com/Stentzler/MERN_ticket_manager',
   },
   {
     id: uuidv4(),
@@ -53,14 +61,6 @@ const projects = [
     img: React,
     link: 'https://calc-app-bice.vercel.app/',
     repo: 'https://github.com/Stentzler/calc_app',
-  },
-  {
-    id: uuidv4(),
-    name: 'Kenzie Food (HTML/CSS/JS)',
-    desc: 'Developed HTML, CSS & Vanilla JS. fictional e-commerce website where you can purchase produts and register your own products for sale',
-    img: JSVanilla,
-    link: 'https://stentzler.github.io/KenzieFood/',
-    repo: 'https://github.com/Stentzler/KenzieFood',
   },
 ];
 

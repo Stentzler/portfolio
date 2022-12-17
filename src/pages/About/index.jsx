@@ -2,7 +2,6 @@ import { useContext } from 'react';
 import { FaReact, FaNodeJs } from 'react-icons/fa';
 import {
   SiTailwindcss,
-  SiJavascript,
   SiTypescript,
   SiMongodb,
   SiBootstrap,
@@ -10,8 +9,9 @@ import {
   SiPostgresql,
   SiDjango,
   SiVuedotjs,
+  SiExpress,
+  SiDocker,
 } from 'react-icons/si';
-
 import Ptext from '../../components/Ptext';
 import ContactBanner from '../../components/ContactBanner';
 import AboutImg from '../../assets/images/about-page-img.png';
@@ -28,7 +28,9 @@ function About() {
         <div className="top-section">
           <div className="left">
             <p className="about__subheading">
-              Hi, I am <span>Vinicius Lima</span>
+              {language
+                ? 'Olá, me chamo Vinicius Lima'
+                : 'Hi, I am Vinicius Lima'}
             </p>
             <h2 className="about__heading">Front-End Developer</h2>
             <div className="about__info">
@@ -39,7 +41,7 @@ function About() {
               </Ptext>
             </div>
             <a
-              href="https://drive.google.com/file/d/1VV4NIkIztzEJR9NGVXHoajW2D_9ylH22/view?usp=sharing"
+              href="https://drive.google.com/file/d/1VdJ_7OH1EOfDQGx2jGUQy0eEd9vqKHiu/view?usp=sharing"
               target="_blank"
               rel="noreferrer"
             >
@@ -89,7 +91,11 @@ function About() {
             />
             <AboutInfoItem
               title="BackEnd"
-              items={[<FaNodeJs />, <SiDjango />, <SiPostgresql />]}
+              items={[<FaNodeJs />, <SiExpress />, <SiDjango />]}
+            />
+            <AboutInfoItem
+              title="Databases"
+              items={[<SiMongodb />, <SiPostgresql />, <SiDocker />]}
             />
             <AboutInfoItem
               title={language ? 'Outros' : 'Tools'}
