@@ -1,0 +1,46 @@
+{
+  "en": {
+    "metadata": {
+      "title": "Portfolio",
+      "description": "A software engineering portfolio."
+    },
+    "navigation": {
+      "home": "Home",
+      "bio": "Bio",
+      "projects": "Projects",
+      "contact": "Contact",
+      "language": "Language"
+    },
+    "content": {
+      "preparing": "Portfolio content is being prepared.",
+      "projectsEmpty": "Published projects will appear here.",
+      "notFound": "The requested page could not be found.",
+      "skipToContent": "Skip to content"
+    },
+    "footer": {
+      "copyright": "All rights reserved."
+    }
+  },
+  "pt-BR": {
+    "metadata": {
+      "title": "Portfólio",
+      "description": "Um portfólio de engenharia de software."
+    },
+    "navigation": {
+      "home": "Início",
+      "bio": "Sobre",
+      "projects": "Projetos",
+      "contact": "Contato",
+      "language": "Idioma"
+    },
+    "content": {
+      "preparing": "O conteúdo do portfólio está sendo preparado.",
+      "projectsEmpty": "Os projetos publicados aparecerão aqui.",
+      "notFound": "A página solicitada não foi encontrada.",
+      "skipToContent": "Pular para o conteúdo"
+    },
+    "footer": {
+      "copyright": "Todos os direitos reservados."
+    }
+  }
+}
