@@ -107,6 +107,11 @@ export const uiSchema = z.object({
     }),
     content: z.object({ preparing: z.string().min(1), projectsEmpty: z.string().min(1), notFound: z.string().min(1), skipToContent: z.string().min(1) }),
     sections: z.object({ capabilities: z.string().min(1), bio: z.string().min(1), timeline: z.string().min(1), certifications: z.string().min(1), contact: z.string().min(1) }),
+    projects: z.object({
+      viewCaseStudy: z.string().min(1), backToProjects: z.string().min(1), repository: z.string().min(1), technologies: z.string().min(1),
+      category: z.record(projectCategorySchema, z.string().min(1)),
+      status: z.record(projectStatusSchema, z.string().min(1)),
+    }),
     footer: z.object({ copyright: z.string().min(1) }),
   }),
   "pt-BR": z.object({
@@ -117,6 +122,11 @@ export const uiSchema = z.object({
     }),
     content: z.object({ preparing: z.string().min(1), projectsEmpty: z.string().min(1), notFound: z.string().min(1), skipToContent: z.string().min(1) }),
     sections: z.object({ capabilities: z.string().min(1), bio: z.string().min(1), timeline: z.string().min(1), certifications: z.string().min(1), contact: z.string().min(1) }),
+    projects: z.object({
+      viewCaseStudy: z.string().min(1), backToProjects: z.string().min(1), repository: z.string().min(1), technologies: z.string().min(1),
+      category: z.record(projectCategorySchema, z.string().min(1)),
+      status: z.record(projectStatusSchema, z.string().min(1)),
+    }),
     footer: z.object({ copyright: z.string().min(1) }),
   }),
 });

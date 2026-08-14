@@ -1,0 +1,59 @@
+{
+  "slug": "fastapi-scraping",
+  "publicationState": "published",
+  "featured": false,
+  "displayOrder": 1,
+  "category": "backend",
+  "status": "completed",
+  "year": 2025,
+  "technologies": ["Python", "FastAPI", "Celery", "RabbitMQ", "Redis", "Selenium", "Docker Compose", "pytest"],
+  "repositoryUrl": "https://github.com/Stentzler/fastApi-scraping",
+  "content": {
+    "title": {
+      "en": "Asynchronous CNPJ Query API",
+      "pt-BR": "API Assíncrona de Consulta de CNPJ"
+    },
+    "summary": {
+      "en": "A FastAPI service that queues CNPJ queries, processes Sintegra Goiás lookups asynchronously, and exposes temporary results through a task-based API.",
+      "pt-BR": "Um serviço FastAPI que enfileira consultas de CNPJ, processa buscas no Sintegra Goiás de forma assíncrona e expõe resultados temporários por uma API baseada em tarefas."
+    },
+    "sections": [
+      {
+        "heading": {
+          "en": "Overview",
+          "pt-BR": "Visão geral"
+        },
+        "paragraphs": [
+          {
+            "en": "The API receives a CNPJ through a POST endpoint and returns a task identifier. Clients can later query the task status and temporary result through a separate endpoint.",
+            "pt-BR": "A API recebe um CNPJ por um endpoint POST e retorna um identificador de tarefa. Clientes podem consultar posteriormente o status da tarefa e o resultado temporário por meio de outro endpoint."
+          }
+        ]
+      },
+      {
+        "heading": {
+          "en": "Asynchronous workflow",
+          "pt-BR": "Fluxo assíncrono"
+        },
+        "paragraphs": [
+          {
+            "en": "FastAPI validates and submits the request to RabbitMQ. A Celery worker consumes the task, uses Selenium to perform the lookup, and stores the result temporarily in Redis. The API then reports pending, completed, not-found, or invalid-task states to clients.",
+            "pt-BR": "O FastAPI valida e envia a requisição para o RabbitMQ. Um worker Celery consome a tarefa, usa Selenium para realizar a consulta e armazena temporariamente o resultado no Redis. A API então informa aos clientes os estados pendente, concluído, não encontrado ou tarefa inválida."
+          }
+        ]
+      },
+      {
+        "heading": {
+          "en": "Quality and operational considerations",
+          "pt-BR": "Qualidade e considerações operacionais"
+        },
+        "paragraphs": [
+          {
+            "en": "The project separates API and worker tests, documents Docker Compose startup, and uses a one-hour Redis TTL for task results. The temporary cache policy keeps completed query data from being retained indefinitely.",
+            "pt-BR": "O projeto separa os testes da API e do worker, documenta a inicialização com Docker Compose e usa um TTL de uma hora no Redis para os resultados das tarefas. A política de cache temporário evita que dados de consultas concluídas sejam mantidos indefinidamente."
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "slug": "game-of-life-design-patterns",
+  "publicationState": "published",
+  "featured": false,
+  "displayOrder": 2,
+  "category": "lab",
+  "status": "completed",
+  "year": 2026,
+  "technologies": ["Python", "Pygame", "NumPy", "pytest", "Docker"],
+  "repositoryUrl": "https://github.com/Stentzler/game-of-life-design-patterns",
+  "content": {
+    "title": {
+      "en": "Game of Life Design Patterns Study",
+      "pt-BR": "Estudo de Padrões de Projeto: Game of Life"
+    },
+    "summary": {
+      "en": "A Python and Pygame study that applies design patterns, SOLID principles, and clearer architectural boundaries to Conway's Game of Life.",
+      "pt-BR": "Um estudo em Python e Pygame que aplica padrões de projeto, princípios SOLID e limites arquiteturais mais claros ao Game of Life de Conway."
+    },
+    "sections": [
+      {
+        "heading": {
+          "en": "Overview",
+          "pt-BR": "Visão geral"
+        },
+        "paragraphs": [
+          {
+            "en": "The goal was not only to make the game work, but to study how a small Pygame application could be organized with clearer responsibilities. The original implementation remains available as a reference while the refactored application is organized under a dedicated package.",
+            "pt-BR": "O objetivo não foi apenas fazer o jogo funcionar, mas estudar como uma pequena aplicação em Pygame poderia ser organizada com responsabilidades mais claras. A implementação original permanece disponível como referência, enquanto a aplicação refatorada é organizada em um pacote dedicado."
+          }
+        ]
+      },
+      {
+        "heading": {
+          "en": "Patterns implemented",
+          "pt-BR": "Padrões implementados"
+        },
+        "paragraphs": [
+          {
+            "en": "The refactoring uses four patterns to make responsibilities and dependencies explicit.",
+            "pt-BR": "A refatoração usa quatro padrões para tornar explícitas as responsabilidades e dependências."
+          }
+        ],
+        "items": [
+          {
+            "en": "Strategy: switches between Conway and HighLife evolution rules without changing the game engine.",
+            "pt-BR": "Strategy: alterna entre as regras de evolução Conway e HighLife sem alterar o motor do jogo."
+          },
+          {
+            "en": "State: models Editing, Running, and Paused simulation modes without spreading conditional logic through the application.",
+            "pt-BR": "State: modela os modos de simulação Edição, Execução e Pausa sem espalhar lógica condicional pela aplicação."
+          },
+          {
+            "en": "Publisher/Subscriber: lets simulation events notify summary and logging subscribers through an interface.",
+            "pt-BR": "Publisher/Subscriber: permite que eventos da simulação notifiquem assinantes de resumo e logging por meio de uma interface."
+          },
+          {
+            "en": "Factory: centralizes state object creation without coupling concrete states directly to one another.",
+            "pt-BR": "Factory: centraliza a criação de objetos de estado sem acoplar diretamente os estados concretos entre si."
+          }
+        ]
+      },
+      {
+        "heading": {
+          "en": "Architecture and lessons learned",
+          "pt-BR": "Arquitetura e aprendizados"
+        },
+        "paragraphs": [
+          {
+            "en": "The architecture keeps Pygame input and rendering in the UI layer, while the engine, grid, strategies, and subscribers remain independent from the UI. This supports SOLID-oriented boundaries and makes the system easier to reason about.",
+            "pt-BR": "A arquitetura mantém a entrada e a renderização do Pygame na camada de interface, enquanto o motor, a grade, as estratégias e os assinantes permanecem independentes da UI. Isso apoia limites orientados aos princípios SOLID e torna o sistema mais fácil de compreender."
+          },
+          {
+            "en": "This is a study repository, not a definitive implementation. The pattern-focused choices are intentionally visible so their trade-offs can be examined; the same application could use different patterns or a simpler design.",
+            "pt-BR": "Este é um repositório de estudo, não uma implementação definitiva. As escolhas orientadas a padrões são intencionalmente visíveis para que seus trade-offs possam ser analisados; a mesma aplicação poderia usar padrões diferentes ou um design mais simples."
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -24,6 +24,28 @@
       "certifications": "Certifications",
       "contact": "Get in touch"
     },
+    "projects": {
+      "viewCaseStudy": "View case study",
+      "backToProjects": "← All projects",
+      "repository": "Repository",
+      "technologies": "Technologies",
+      "category": {
+        "backend": "Backend",
+        "cloud": "Cloud",
+        "devops": "DevOps",
+        "platform": "Platform",
+        "full-stack": "Full stack",
+        "lab": "Lab"
+      },
+      "status": {
+        "completed": "Completed",
+        "in-progress": "In progress",
+        "maintained": "Maintained",
+        "archived": "Archived",
+        "case-study": "Case study",
+        "lab": "Lab"
+      }
+    },
     "footer": {
       "copyright": "All rights reserved."
     }
@@ -52,6 +74,28 @@
       "timeline": "Trajetória profissional",
       "certifications": "Certificações",
       "contact": "Entre em contato"
+    },
+    "projects": {
+      "viewCaseStudy": "Ver estudo de caso",
+      "backToProjects": "← Todos os projetos",
+      "repository": "Repositório",
+      "technologies": "Tecnologias",
+      "category": {
+        "backend": "Backend",
+        "cloud": "Cloud",
+        "devops": "DevOps",
+        "platform": "Plataforma",
+        "full-stack": "Full stack",
+        "lab": "Laboratório"
+      },
+      "status": {
+        "completed": "Concluído",
+        "in-progress": "Em andamento",
+        "maintained": "Mantido",
+        "archived": "Arquivado",
+        "case-study": "Estudo de caso",
+        "lab": "Laboratório"
+      }
     },
     "footer": {
       "copyright": "Todos os direitos reservados."
