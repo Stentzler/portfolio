@@ -17,7 +17,7 @@ export function SiteLayout({ children, locale }: SiteLayoutProps) {
 
   return (
     <html lang={locale}>
-      <body className="bg-canvas font-sans text-ink antialiased">
+      <body className="flex min-h-dvh flex-col bg-canvas font-sans text-ink antialiased">
         <a className="skip-link" href="#main-content">{ui.content.skipToContent}</a>
         <header className="border-b border-line">
           <nav aria-label={ui.navigation.home} className="mx-auto flex max-w-6xl items-center justify-between px-5 py-5">
@@ -30,8 +30,8 @@ export function SiteLayout({ children, locale }: SiteLayoutProps) {
             </div>
           </nav>
         </header>
-        <main className="mx-auto min-h-[calc(100vh-9rem)] max-w-6xl px-5 pb-12 pt-16" id="main-content">{children}</main>
-        <footer className="sticky bottom-0 z-20 border-t border-line bg-canvas/95 backdrop-blur">
+        <main className="mx-auto w-full max-w-6xl flex-1 px-5 pb-12 pt-16" id="main-content">{children}</main>
+        <footer className="border-t border-line bg-canvas">
           <div className="mx-auto flex max-w-6xl flex-col gap-4 px-5 py-6 text-sm text-muted sm:flex-row sm:items-center sm:justify-between">
             <p>© {new Date().getFullYear()} {profile.companyName}. {ui.footer.copyright}</p>
             <ul className="flex flex-wrap gap-x-5 gap-y-2 font-medium">

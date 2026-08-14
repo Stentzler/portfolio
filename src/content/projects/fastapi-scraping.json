@@ -6,7 +6,7 @@
   "category": "backend",
   "status": "completed",
   "year": 2025,
-  "technologies": ["Python", "FastAPI", "Celery", "RabbitMQ", "Redis", "Selenium", "Docker Compose", "pytest"],
+  "technologies": ["Python", "FastAPI", "Celery", "RabbitMQ", "Redis", "Selenium"],
   "repositoryUrl": "https://github.com/Stentzler/fastApi-scraping",
   "content": {
     "title": {
