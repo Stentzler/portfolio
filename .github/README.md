@@ -21,6 +21,8 @@ The Terraform role is deliberately disabled until the GitHub repository exists
 and its organization-specific OIDC subject is known. Set
 `enable_portfolio_github_deployment = 1` and the exact
 `portfolio_github_oidc_subject` only after the Environment has been created.
+For this repository, its subject format is
+`repo:Stentzler@79855747/portfolio@REPOSITORY_ID:environment:production`.
 
 The EC2 instance role pulls the image from ECR; no AWS credentials are stored
 in the container or this repository.
