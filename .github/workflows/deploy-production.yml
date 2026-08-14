@@ -1,0 +1,197 @@
+name: Deploy portfolio production
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+  id-token: write
+
+concurrency:
+  group: portfolio-production-deploy
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    name: Build and deploy production image
+    runs-on: ubuntu-24.04
+    environment: production
+    timeout-minutes: 20
+    env:
+      AWS_REGION: ${{ vars.AWS_REGION }}
+      ECR_REPOSITORY_URL: ${{ vars.ECR_REPOSITORY_URL }}
+      SSM_DEPLOYMENT_TARGET_PARAMETER: ${{ vars.SSM_DEPLOYMENT_TARGET_PARAMETER }}
+      AWS_DEPLOY_ROLE_ARN: ${{ secrets.AWS_DEPLOY_ROLE_ARN }}
+
+    steps:
+      - name: Check out the exact commit being deployed
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v5.0.0
+
+      - name: Validate deployment configuration
+        run: |
+          set -euo pipefail
+          : "${AWS_REGION:?Missing production environment variable AWS_REGION}"
+          : "${ECR_REPOSITORY_URL:?Missing production environment variable ECR_REPOSITORY_URL}"
+          : "${SSM_DEPLOYMENT_TARGET_PARAMETER:?Missing production environment variable SSM_DEPLOYMENT_TARGET_PARAMETER}"
+          : "${AWS_DEPLOY_ROLE_ARN:?Missing production environment secret AWS_DEPLOY_ROLE_ARN}"
+
+      - name: Set up the pinned Node.js version
+        uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
+        with:
+          node-version: 20.20.2
+
+      - name: Install the exact dependencies
+        run: |
+          corepack enable
+          pnpm install --frozen-lockfile
+
+      - name: Check the static site before creating an image
+        run: |
+          pnpm lint
+          pnpm typecheck
+          pnpm validate:content
+          pnpm build
+
+      - name: Obtain temporary AWS credentials through OIDC
+        uses: aws-actions/configure-aws-credentials@e6de054238d6b7531b4efff3b6587d9aade6a06c # v6.2.3
+        with:
+          aws-region: ${{ env.AWS_REGION }}
+          role-session-name: portfolio-${{ github.run_id }}
+          role-to-assume: ${{ env.AWS_DEPLOY_ROLE_ARN }}
+
+      - name: Resolve the current deployment target
+        id: deployment-target
+        run: |
+          set -euo pipefail
+          instance_id="$(aws ssm get-parameter \
+            --name "$SSM_DEPLOYMENT_TARGET_PARAMETER" \
+            --region "$AWS_REGION" \
+            --query 'Parameter.Value' \
+            --output text)"
+
+          if [[ ! "$instance_id" =~ ^i-[0-9a-f]{8,17}$ ]]; then
+            echo "Deployment target parameter did not contain a valid EC2 instance ID." >&2
+            exit 1
+          fi
+
+          echo "instance_id=$instance_id" >> "$GITHUB_OUTPUT"
+
+      - name: Build or reuse the immutable image
+        id: image
+        env:
+          IMAGE_TAG: ${{ github.sha }}
+        run: |
+          set -euo pipefail
+          image_uri="$ECR_REPOSITORY_URL:$IMAGE_TAG"
+          repository_name="${ECR_REPOSITORY_URL#*/}"
+          lookup_error="$(mktemp)"
+          trap 'rm --force "$lookup_error"' EXIT
+
+          if aws ecr describe-images \
+            --repository-name "$repository_name" \
+            --image-ids imageTag="$IMAGE_TAG" \
+            --region "$AWS_REGION" \
+            >/dev/null 2>"$lookup_error"; then
+            echo "Reusing existing image $image_uri."
+          elif grep --quiet "ImageNotFoundException" "$lookup_error"; then
+            ecr_registry="${ECR_REPOSITORY_URL%/*}"
+            aws ecr get-login-password --region "$AWS_REGION" \
+              | docker login --username AWS --password-stdin "$ecr_registry"
+            docker build --platform linux/amd64 --tag "$image_uri" .
+            docker push "$image_uri"
+          else
+            cat "$lookup_error" >&2
+            exit 1
+          fi
+
+          echo "image_uri=$image_uri" >> "$GITHUB_OUTPUT"
+
+      - name: Deploy with SSM and roll back an unhealthy image
+        env:
+          IMAGE_URI: ${{ steps.image.outputs.image_uri }}
+          SSM_INSTANCE_ID: ${{ steps.deployment-target.outputs.instance_id }}
+        run: |
+          set -euo pipefail
+
+          cat > deployment-script.sh <<'SCRIPT'
+          #!/usr/bin/env bash
+          set -Eeuo pipefail
+
+          image_uri="$1"
+          aws_region="$2"
+          container_name="vinicius-portfolio"
+          previous_image="$(docker inspect --format '{{.Config.Image}}' "$container_name" 2>/dev/null || true)"
+
+          start_container() {
+            docker run --detach \
+              --name "$container_name" \
+              --restart unless-stopped \
+              --publish 127.0.0.1:3001:3001 \
+              "$1"
+          }
+
+          application_is_healthy() {
+            for attempt in {1..12}; do
+              if docker exec "$container_name" wget -q -O - http://127.0.0.1:3001/health | grep -qx "ok"; then
+                return 0
+              fi
+              sleep 5
+            done
+            return 1
+          }
+
+          ecr_registry="${image_uri%%/*}"
+          aws ecr get-login-password --region "$aws_region" \
+            | docker login --username AWS --password-stdin "$ecr_registry"
+          docker pull "$image_uri"
+
+          docker rm --force "$container_name" 2>/dev/null || true
+          start_container "$image_uri"
+
+          if application_is_healthy; then
+            echo "Deployment of $image_uri succeeded."
+            exit 0
+          fi
+
+          echo "New image failed its local health check; attempting rollback." >&2
+          docker rm --force "$container_name" 2>/dev/null || true
+
+          if [[ -n "$previous_image" ]]; then
+            start_container "$previous_image"
+            application_is_healthy
+            echo "Rollback to $previous_image succeeded." >&2
+          else
+            echo "No previous container image exists to restore." >&2
+          fi
+
+          exit 1
+          SCRIPT
+
+          {
+            printf "bash -s -- %q %q <<'DEPLOYMENT_SCRIPT'\n" \
+              "$IMAGE_URI" "$AWS_REGION"
+            cat deployment-script.sh
+            printf '\nDEPLOYMENT_SCRIPT\n'
+          } | jq -Rs '{commands: [.]}' > ssm-parameters.json
+
+          command_id="$(aws ssm send-command \
+            --document-name AWS-RunShellScript \
+            --instance-ids "$SSM_INSTANCE_ID" \
+            --parameters file://ssm-parameters.json \
+            --comment "Deploy portfolio ${GITHUB_SHA}" \
+            --query 'Command.CommandId' \
+            --output text)"
+
+          if ! aws ssm wait command-executed \
+            --command-id "$command_id" \
+            --instance-id "$SSM_INSTANCE_ID"; then
+            aws ssm get-command-invocation \
+              --command-id "$command_id" \
+              --instance-id "$SSM_INSTANCE_ID" || true
+            exit 1
+          fi
+
+          aws ssm get-command-invocation \
+            --command-id "$command_id" \
+            --instance-id "$SSM_INSTANCE_ID"

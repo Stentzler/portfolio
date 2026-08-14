@@ -362,7 +362,7 @@ Draft or private projects must not be included in navigation, the sitemap, or ge
 | Content | Local JSON |
 | Content validation | Zod |
 | Package manager | pnpm |
-| Production server | None |
+| Production server | Static Nginx container serving `out/` |
 | Database | None |
 | Automated tests | Deferred |
 
@@ -444,11 +444,21 @@ The production build is the primary proof that every route can be statically gen
 
 ## 17. Deployment
 
-The hosting provider is intentionally undecided.
+The initial hosting target is the existing CAGED frontend infrastructure.
 
-Deployment must serve the contents of `out/` from any capable static host. The application must not require a provider-specific runtime.
+Deployment serves the contents of `out/` through a static Nginx container. No
+Next.js runtime is required after the image is built.
 
-A later deployment decision may select Cloudflare Pages, GitHub Pages, Vercel, or another static host. Provider configuration must not weaken the static-only requirements.
+The initial deployment target is the existing CAGED frontend EC2 instance. Its
+host Nginx routes CloudFront requests for `stentzler.com.br` to a second,
+loopback-bound container on port `3001`; the existing CAGED container remains
+on port `3000`. CloudFront terminates viewer HTTPS and routes the portfolio
+hostname through its existing WAF-protected distribution.
+
+GitHub Actions validates the site, pushes immutable commit-SHA images to ECR,
+and uses Systems Manager to replace the portfolio container with health-check
+and rollback handling. This infrastructure choice must not weaken the
+static-only requirements: `out/` remains independently hostable.
 
 ## 18. Out of Scope for the Initial Version
 
