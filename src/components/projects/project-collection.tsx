@@ -11,16 +11,18 @@ type ProjectCollectionProps = {
 type ProjectGroupProps = {
   locale: Locale;
   projects: Project[];
-  title: string;
+  title?: string;
 };
 
 function ProjectGroup({ locale, projects, title }: ProjectGroupProps) {
   if (projects.length === 0) return null;
 
+  const hasHeading = title !== undefined;
+
   return (
-    <section aria-labelledby={`${title}-heading`}>
-      <h2 className="section-heading" id={`${title}-heading`}>{title}</h2>
-      <div className="mt-6 grid gap-6 lg:grid-cols-2">
+    <section aria-labelledby={hasHeading ? `${title}-heading` : undefined}>
+      {hasHeading && <h2 className="section-heading" id={`${title}-heading`}>{title}</h2>}
+      <div className={hasHeading ? "mt-6 grid gap-6 lg:grid-cols-2" : "grid gap-6 lg:grid-cols-2"}>
         {projects.map((project) => <ProjectCard locale={locale} project={project} key={project.slug} />)}
       </div>
     </section>
@@ -33,7 +35,7 @@ export function ProjectCollection({ locale, projects }: ProjectCollectionProps) 
   const labs = projects.filter((project) => project.category === "lab");
 
   return (
-    <div className="space-y-12">
+    <div className="-mt-16 space-y-12">
       <h1 className="sr-only">{ui.navigation.projects}</h1>
       <ProjectGroup locale={locale} projects={regularProjects} title={ui.projects.sections.projects} />
       <ProjectGroup locale={locale} projects={labs} title={ui.projects.sections.labs} />

@@ -10,6 +10,19 @@
   --color-accent: 12 101 117;
 }
 
+html[data-theme="dark"] {
+  color-scheme: dark;
+  --color-canvas: 28 25 23;
+  --color-ink: 245 245 244;
+  --color-muted: 203 197 190;
+  --color-line: 87 83 78;
+  --color-accent: 94 234 212;
+}
+
+.theme-toggle__sun { display: none; }
+html[data-theme="dark"] .theme-toggle__moon { display: none; }
+html[data-theme="dark"] .theme-toggle__sun { display: block; }
+
 * { border-color: rgb(var(--color-line)); }
 
 html { scroll-behavior: smooth; }

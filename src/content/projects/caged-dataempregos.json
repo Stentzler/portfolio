@@ -1,0 +1,80 @@
+{
+  "slug": "caged-dataempregos",
+  "publicationState": "published",
+  "featured": false,
+  "displayOrder": 0,
+  "category": "cloud",
+  "status": "completed",
+  "year": 2026,
+  "technologies": ["AWS Lambda", "AWS Step Functions", "Amazon ECS", "DynamoDB", "AWS S3", "AWS SQS", "AWS SNS", "Terraform", "GitHub Actions"],
+  "repositoryUrl": "https://github.com/Stentzler/caged",
+  "demoUrl": "https://dataempregos.stentzler.com.br",
+  "content": {
+    "title": {
+      "en": "CAGED / DataEmpregos",
+      "pt-BR": "CAGED / DataEmpregos"
+    },
+    "summary": {
+      "en": "An event-driven AWS platform that turns Novo CAGED archives into query-ready formal-employment metrics for DataEmpregos, an independent labour-market explorer.",
+      "pt-BR": "Uma plataforma AWS orientada a eventos que transforma arquivos do Novo CAGED em métricas de emprego formal prontas para consulta no DataEmpregos, um explorador independente do mercado de trabalho."
+    },
+    "sections": [
+      {
+        "heading": {
+          "en": "Overview",
+          "pt-BR": "Visão geral"
+        },
+        "paragraphs": [
+          {
+            "en": "DataEmpregos makes Brazil's monthly formal-employment movements easier to explore. CAGED prepares the underlying data by turning the official Novo CAGED source archives into geographic and occupational metrics that can be queried efficiently.",
+            "pt-BR": "O DataEmpregos torna mais simples explorar a movimentação mensal do emprego formal no Brasil. O CAGED prepara os dados subjacentes ao transformar os arquivos oficiais do Novo CAGED em métricas geográficas e ocupacionais que podem ser consultadas de forma eficiente."
+          }
+        ]
+      },
+      {
+        "heading": {
+          "en": "Event-driven ingestion",
+          "pt-BR": "Ingestão orientada a eventos"
+        },
+        "paragraphs": [
+          {
+            "en": "EventBridge Scheduler starts a Standard Step Functions workflow that checks for new archives, downloads required files to private S3 storage, and then runs a Fargate processing task. Step Functions owns sequencing, retries, and failure handling across the workflow.",
+            "pt-BR": "O EventBridge Scheduler inicia um workflow Standard do Step Functions que verifica novos arquivos, baixa os arquivos necessários para um armazenamento S3 privado e então executa uma tarefa de processamento no Fargate. O Step Functions controla o sequenciamento, as tentativas e o tratamento de falhas em todo o workflow."
+          },
+          {
+            "en": "The processor validates complete monthly file groups, aggregates records by geography and CBO occupational family, and writes precomputed metrics plus availability metadata to DynamoDB. The query path therefore reads a prepared data model instead of parsing source archives during a request.",
+            "pt-BR": "O processador valida grupos completos de arquivos mensais, agrega registros por geografia e família ocupacional da CBO e grava métricas pré-calculadas junto com metadados de disponibilidade no DynamoDB. Assim, o caminho de consulta lê um modelo de dados preparado em vez de processar arquivos-fonte durante uma requisição."
+          }
+        ]
+      },
+      {
+        "heading": {
+          "en": "Private query and reliability boundaries",
+          "pt-BR": "Limites privados de consulta e confiabilidade"
+        },
+        "paragraphs": [
+          {
+            "en": "CloudFront and AWS WAF form the public edge. Browser clients reach the DataEmpregos frontend, whose server boundary validates requests and calls a private API Gateway with its AWS identity; the API invokes a read-only query Lambda that retrieves the prepared DynamoDB metrics.",
+            "pt-BR": "O CloudFront e o AWS WAF formam a borda pública. Os navegadores acessam o frontend do DataEmpregos, cuja camada de servidor valida as requisições e chama um API Gateway privado usando sua identidade AWS; a API invoca uma Lambda de consulta somente leitura que recupera as métricas preparadas no DynamoDB."
+          },
+          {
+            "en": "SNS, SQS, and a notifier Lambda decouple workflow notifications from ingestion. SQS retries transient delivery failures and isolates unresolved messages in a dead-letter queue, while structured CloudWatch logs and Step Functions execution history provide operational visibility.",
+            "pt-BR": "SNS, SQS e uma Lambda de notificações desacoplam as notificações do workflow da ingestão. O SQS repete falhas transitórias de entrega e isola mensagens não resolvidas em uma fila de mensagens mortas, enquanto logs estruturados no CloudWatch e o histórico de execuções do Step Functions fornecem visibilidade operacional."
+          }
+        ]
+      },
+      {
+        "heading": {
+          "en": "Delivery and infrastructure",
+          "pt-BR": "Entrega e infraestrutura"
+        },
+        "paragraphs": [
+          {
+            "en": "Terraform manages the backend and frontend infrastructure in separate repositories. Each application repository owns its deployment pipeline: GitHub Actions assumes narrowly scoped AWS roles through OIDC to release Lambda ZIP artifacts, promote Lambda aliases, or build and deploy the Fargate processing image independently.",
+            "pt-BR": "O Terraform gerencia a infraestrutura de backend e frontend em repositórios separados. Cada repositório de aplicação possui seu pipeline de entrega: o GitHub Actions assume roles AWS de escopo restrito por OIDC para publicar artefatos ZIP de Lambda, promover aliases de Lambda ou construir e implantar a imagem de processamento do Fargate de forma independente."
+          }
+        ]
+      }
+    ]
+  }
+}

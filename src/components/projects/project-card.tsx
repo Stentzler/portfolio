@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { DetailsIcon, GitHubIcon } from "@/components/ui/project-link-icons";
+import { WebsiteIcon } from "@/components/ui/website-icon";
 import type { Project } from "@/lib/validation/schemas";
 import { getUiContent } from "@/lib/content/ui";
 import { getLocalePath, type Locale } from "@/lib/i18n/locales";
@@ -27,8 +29,22 @@ export function ProjectCard({ locale, project }: ProjectCardProps) {
         {project.technologies.map((technology) => <li className="border border-line px-2 py-1 text-sm" key={technology}>{technology}</li>)}
       </ul>
       <div className="mt-6 flex flex-wrap gap-x-5 gap-y-3 font-medium">
-        <Link className="underline" href={getLocalePath(locale, `projects/${project.slug}`)}>{ui.projects.viewCaseStudy}</Link>
-        {project.repositoryUrl && <a className="underline" href={project.repositoryUrl} rel="noreferrer" target="_blank">{ui.projects.repository}</a>}
+        <Link className="inline-flex items-center gap-2 underline" href={getLocalePath(locale, `projects/${project.slug}`)}>
+          <DetailsIcon />
+          {ui.projects.viewCaseStudy}
+        </Link>
+        {project.repositoryUrl && (
+          <a className="inline-flex items-center gap-2 underline" href={project.repositoryUrl} rel="noreferrer" target="_blank">
+            <GitHubIcon />
+            {ui.projects.repository}
+          </a>
+        )}
+        {project.demoUrl && (
+          <a className="inline-flex items-center gap-2 underline" href={project.demoUrl} rel="noreferrer" target="_blank">
+            <WebsiteIcon />
+            {ui.projects.liveDemo}
+          </a>
+        )}
       </div>
     </article>
   );

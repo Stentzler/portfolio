@@ -11,6 +11,10 @@
       "contact": "Contact",
       "language": "Language"
     },
+    "theme": {
+      "switchToDark": "Switch to dark theme",
+      "switchToLight": "Switch to light theme"
+    },
     "content": {
       "preparing": "Portfolio content is being prepared.",
       "projectsEmpty": "Published projects will appear here.",
@@ -25,9 +29,10 @@
       "contact": "Get in touch"
     },
     "projects": {
-      "viewCaseStudy": "View case study",
+      "viewCaseStudy": "Details",
       "backToProjects": "← All projects",
       "repository": "Repository",
+      "liveDemo": "Website",
       "technologies": "Technologies",
       "sections": {
         "projects": "Projects",
@@ -66,6 +71,10 @@
       "contact": "Contato",
       "language": "Idioma"
     },
+    "theme": {
+      "switchToDark": "Alternar para o tema escuro",
+      "switchToLight": "Alternar para o tema claro"
+    },
     "content": {
       "preparing": "O conteúdo do portfólio está sendo preparado.",
       "projectsEmpty": "Os projetos publicados aparecerão aqui.",
@@ -80,9 +89,10 @@
       "contact": "Entre em contato"
     },
     "projects": {
-      "viewCaseStudy": "Ver estudo de caso",
+      "viewCaseStudy": "Detalhes",
       "backToProjects": "← Todos os projetos",
       "repository": "Repositório",
+      "liveDemo": "Website",
       "technologies": "Tecnologias",
       "sections": {
         "projects": "Projetos",

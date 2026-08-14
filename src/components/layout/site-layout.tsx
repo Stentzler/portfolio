@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { LanguageSwitcher } from "@/components/layout/language-switcher";
+import { ThemeToggle } from "@/components/layout/theme-toggle";
 import { getUiContent } from "@/lib/content/ui";
 import { getProfile } from "@/lib/content/profile";
 import { getAlternateLocale, getLocalePath, type Locale } from "@/lib/i18n/locales";
@@ -16,7 +17,7 @@ export function SiteLayout({ children, locale }: SiteLayoutProps) {
   const alternateLocale = getAlternateLocale(locale);
 
   return (
-    <html lang={locale}>
+    <html data-scroll-behavior="smooth" data-theme="dark" lang={locale}>
       <body className="flex min-h-dvh flex-col bg-canvas font-sans text-ink antialiased">
         <a className="skip-link" href="#main-content">{ui.content.skipToContent}</a>
         <header className="border-b border-line">
@@ -27,6 +28,7 @@ export function SiteLayout({ children, locale }: SiteLayoutProps) {
               <Link href={getLocalePath(locale, "projects")}>{ui.navigation.projects}</Link>
               <Link href={`${getLocalePath(locale)}#contact`}>{ui.navigation.contact}</Link>
               <LanguageSwitcher targetLocale={alternateLocale} />
+              <ThemeToggle switchToDark={ui.theme.switchToDark} switchToLight={ui.theme.switchToLight} />
             </div>
           </nav>
         </header>

@@ -73,7 +73,7 @@ export function HomePage({ locale }: HomePageProps) {
           </div>
         </section>
 
-        <section aria-labelledby="contact-heading" className="py-12" id="contact">
+        <section aria-labelledby="contact-heading" className="pt-12" id="contact">
           <h2 className="section-heading" id="contact-heading">{ui.sections.contact}</h2>
           <ul className="flex flex-wrap gap-x-6 gap-y-3 text-lg font-semibold">
             {profile.contactLinks.map((link) => {

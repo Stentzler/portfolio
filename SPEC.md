@@ -30,6 +30,7 @@ English is the default language. Portuguese is fully supported.
 - Static by design: all routes and content are generated at build time.
 - Easy maintenance: user-editable content lives in validated JSON files.
 - Progressive enhancement: JavaScript is added only where it materially improves the experience.
+- A manually selected light or dark theme is stored locally in the browser.
 - Accessible and responsive: the website must work across screen sizes and input methods.
 - Honest presentation: labs, studies, professional work, and personal projects must be clearly identified.
 

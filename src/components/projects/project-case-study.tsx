@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { GitHubIcon } from "@/components/ui/project-link-icons";
+import { WebsiteIcon } from "@/components/ui/website-icon";
 import type { Project } from "@/lib/validation/schemas";
 import { getUiContent } from "@/lib/content/ui";
 import { getLocalePath, type Locale } from "@/lib/i18n/locales";
@@ -7,14 +9,6 @@ type ProjectCaseStudyProps = {
   locale: Locale;
   project: Project;
 };
-
-function GitHubIcon() {
-  return (
-    <svg aria-hidden="true" className="size-5" fill="currentColor" viewBox="0 0 24 24">
-      <path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.4-4-1.4-.5-1.4-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.6-1.4-5.6-6a4.7 4.7 0 0 1 1.2-3.2c-.1-.3-.5-1.6.1-3.2 0 0 1-.3 3.3 1.2a11.4 11.4 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.9.1 3.2a4.7 4.7 0 0 1 1.2 3.2c0 4.7-2.9 5.7-5.6 6 .4.3.8 1 .8 2.1v3.1c0 .3.2.7.8.6A12 12 0 0 0 12 .3Z" />
-    </svg>
-  );
-}
 
 export function ProjectCaseStudy({ locale, project }: ProjectCaseStudyProps) {
   const ui = getUiContent(locale);
@@ -39,7 +33,12 @@ export function ProjectCaseStudy({ locale, project }: ProjectCaseStudyProps) {
             {ui.projects.repository}
           </a>
         )}
-        {project.demoUrl && <a className="underline" href={project.demoUrl} rel="noreferrer" target="_blank">{project.demoUrl}</a>}
+        {project.demoUrl && (
+          <a className="inline-flex items-center gap-2 underline" href={project.demoUrl} rel="noreferrer" target="_blank">
+            <WebsiteIcon />
+            {ui.projects.liveDemo}
+          </a>
+        )}
       </div>
       <section className="mt-12 border-y border-line py-6" aria-labelledby="technologies-heading">
         <h2 className="section-heading" id="technologies-heading">{ui.projects.technologies}</h2>
