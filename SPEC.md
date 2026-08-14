@@ -154,15 +154,15 @@ The footer contains:
 
 English uses clean unprefixed URLs because it is the default language. Portuguese uses the `/pt` prefix.
 
-| Route | Content |
-| --- | --- |
-| `/` | English home page |
-| `/projects/` | English projects index |
-| `/projects/[slug]/` | English project case study |
-| `/pt/` | Portuguese home page |
-| `/pt/projects/` | Portuguese projects index |
+| Route                  | Content                       |
+| ---------------------- | ----------------------------- |
+| `/`                    | English home page             |
+| `/projects/`           | English projects index        |
+| `/projects/[slug]/`    | English project case study    |
+| `/pt/`                 | Portuguese home page          |
+| `/pt/projects/`        | Portuguese projects index     |
 | `/pt/projects/[slug]/` | Portuguese project case study |
-| `/404.html` | Static not-found page |
+| `/404.html`            | Static not-found page         |
 
 Project slugs are language-independent and stable. Changing a slug is a breaking URL change and requires an explicit migration decision.
 
@@ -351,20 +351,20 @@ Draft or private projects must not be included in navigation, the sitemap, or ge
 
 ### 12.1 Stack
 
-| Concern | Choice |
-| --- | --- |
-| Framework | Next.js |
-| Routing | App Router |
-| Language | TypeScript in strict mode |
-| Rendering | Static export |
-| UI | React Server Components by default |
-| Styling | Tailwind CSS |
-| Content | Local JSON |
-| Content validation | Zod |
-| Package manager | pnpm |
-| Production server | Static Nginx container serving `out/` |
-| Database | None |
-| Automated tests | Deferred |
+| Concern            | Choice                                |
+| ------------------ | ------------------------------------- |
+| Framework          | Next.js                               |
+| Routing            | App Router                            |
+| Language           | TypeScript in strict mode             |
+| Rendering          | Static export                         |
+| UI                 | React Server Components by default    |
+| Styling            | Tailwind CSS                          |
+| Content            | Local JSON                            |
+| Content validation | Zod                                   |
+| Package manager    | pnpm                                  |
+| Production server  | Static Nginx container serving `out/` |
+| Database           | None                                  |
+| Automated tests    | Deferred                              |
 
 Use the latest stable compatible releases when initializing the repository. Pin exact dependency versions through `pnpm-lock.yaml`. Pin the active Node.js LTS version in the repository.
 
@@ -450,7 +450,7 @@ Deployment serves the contents of `out/` through a static Nginx container. No
 Next.js runtime is required after the image is built.
 
 The initial deployment target is the existing CAGED frontend EC2 instance. Its
-host Nginx routes CloudFront requests for `stentzler.com.br` to a second,
+host Nginx routes CloudFront requests for `www.stentzler.com.br` to a second,
 loopback-bound container on port `3001`; the existing CAGED container remains
 on port `3000`. CloudFront terminates viewer HTTPS and routes the portfolio
 hostname through its existing WAF-protected distribution.
