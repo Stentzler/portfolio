@@ -1,7 +1,3 @@
-import { ContentPending } from "@/components/layout/content-pending";
-import { getUiContent } from "@/lib/content/ui";
+import { HomePage } from "@/components/sections/home-page";
 
-export default function EnglishHomePage() {
-  const ui = getUiContent("en");
-  return <ContentPending message={ui.content.preparing} />;
-}
+export default function EnglishHomePage() { return <HomePage locale="en" />; }

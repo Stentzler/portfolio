@@ -1,0 +1,133 @@
+{
+  "name": "Vinicius Stentzler",
+  "role": {
+    "en": "Backend Engineer",
+    "pt-BR": "Backend Engineer"
+  },
+  "subRole": {
+    "en": "Cloud & Platform Engineering",
+    "pt-BR": "Cloud & Engenharia de Plataforma"
+  },
+  "hero": {
+    "en": "I build reliable backend systems, serverless applications, and cloud infrastructure with Python, TypeScript, and AWS, focusing on maintainability, automation, and operational simplicity.",
+    "pt-BR": "Construo sistemas backend confiáveis, aplicações serverless e infraestrutura em nuvem com Python, TypeScript e AWS, com foco em manutenibilidade, automação e simplicidade operacional."
+  },
+  "availability": {
+    "en": "Based in Brazil · EU citizen",
+    "pt-BR": "Residente no Brasil · Cidadão da União Europeia"
+  },
+  "capabilities": [
+    {
+      "en": "Backend Engineering",
+      "pt-BR": "Engenharia de Backend"
+    },
+    {
+      "en": "Cloud & Serverless Architecture",
+      "pt-BR": "Arquitetura Cloud e Serverless"
+    },
+    {
+      "en": "DevOps & Platform Engineering",
+      "pt-BR": "DevOps e Engenharia de Plataforma"
+    }
+  ],
+  "bio": [
+    {
+      "en": "I am a backend engineer and AWS Certified with experience building and maintaining applications using Python, TypeScript and Node.js. My work focuses on reliable APIs, system integrations, data processing, and cloud solutions.",
+      "pt-BR": "Sou engenheiro de backend e AWS Certified, com experiência no desenvolvimento e na manutenção de aplicações utilizando Python, TypeScript e Node.js Go. Meu trabalho é voltado a APIs robustas, integrações entre sistemas, processamento de dados e soluções em nuvem."
+    },
+    {
+      "en": "I enjoy turning complex requirements into simple, maintainable systems, especially where backend development meets cloud infrastructure, automation and observability. I am deepening my knowledge of serverless architecture, DevOps, and platform engineering to build systems that are easier to deploy, operate, and evolve.",
+      "pt-BR": "Gosto de transformar requisitos complexos em sistemas simples e sustentáveis, especialmente quando o desenvolvimento backend se conecta à infraestrutura em nuvem, automação e observabilidade. Tenho aprofundado meus conhecimentos em arquiteturas serverless, DevOps e engenharia de plataforma para construir sistemas mais fáceis de implantar, operar e evoluir."
+    }
+  ],
+  "timeline": [
+    {
+      "period": {
+        "en": "Apr 2026",
+        "pt-BR": "Abr 2026"
+      },
+      "title": {
+        "en": "AWS Certified Developer – Associate",
+        "pt-BR": "AWS Certified Developer – Associate"
+      },
+      "description": {
+        "en": "AWS certification validating knowledge of developing, deploying, debugging, and maintaining cloud applications.",
+        "pt-BR": "Certificação AWS que valida conhecimentos no desenvolvimento, implantação, depuração e manutenção de aplicações em nuvem."
+      }
+    },
+    {
+      "period": {
+        "en": "Jan 2026 — Dec 2026",
+        "pt-BR": "Jan 2026 — Dez 2026"
+      },
+      "title": {
+        "en": "Postgraduate Specialization in DevOps & Cloud Platform Engineering with AI",
+        "pt-BR": "Pós-graduação em DevOps & Cloud Platform Engineering com IA"
+      },
+      "description": {
+        "en": "Advanced specialization focused on DevOps practices, cloud platforms, automation, software delivery, and modern infrastructure.",
+        "pt-BR": "Especialização voltada a práticas de DevOps, plataformas em nuvem, automação, entrega de software e infraestrutura moderna."
+      }
+    },
+    {
+      "period": {
+        "en": "Jan 2025 — Mar 2026",
+        "pt-BR": "Jan 2025 — Mar 2026"
+      },
+      "title": {
+        "en": "Backend Developer (Mid-Level) | Infrastructure — Netrin",
+        "pt-BR": "Desenvolvedor Backend Pleno | Infraestrutura — Netrin"
+      },
+      "description": {
+        "en": "Built APIs and services, asynchronous workloads and data pipelines; automated data extraction with web scraping; improved Redis caching and performance; and supported containerized delivery and observability with Docker, Kubernetes, and Azure Pipelines.",
+        "pt-BR": "Desenvolvimento de APIs e serviços, tarefas assíncronas e pipelines de dados; automação da extração de dados com web scraping; melhoria de cache e performance com Redis; e apoio à entrega containerizada e observabilidade com Docker, Kubernetes e Azure Pipelines."
+      }
+    },
+    {
+      "period": {
+        "en": "Jul 2023 — Dec 2024",
+        "pt-BR": "Jul 2023 — Dez 2024"
+      },
+      "title": {
+        "en": "Junior Backend Developer — QuiteJá",
+        "pt-BR": "Desenvolvedor Backend Júnior — QuiteJá"
+      },
+      "description": {
+        "en": "Maintained third-party integrations, automated serverless file processing on AWS, built asynchronous tasks with Celery and RabbitMQ, and contributed to refactoring, performance improvements, and testing.",
+        "pt-BR": "Manutenção de integrações com sistemas de terceiros, automação serverless de processamento de arquivos na AWS, desenvolvimento de tarefas assíncronas com Celery e RabbitMQ e contribuição para refatorações, melhorias de performance e testes."
+      }
+    }
+  ],
+  "contactLinks": [
+    {
+      "label": {
+        "en": "LinkedIn",
+        "pt-BR": "LinkedIn"
+      },
+      "url": {
+        "en": "https://www.linkedin.com/in/vinicius-stentzler/?locale=en-US",
+        "pt-BR": "https://www.linkedin.com/in/vinicius-stentzler"
+      }
+    },
+    {
+      "label": {
+        "en": "GitHub",
+        "pt-BR": "GitHub"
+      },
+      "url": {
+        "en": "https://github.com/Stentzler",
+        "pt-BR": "https://github.com/Stentzler"
+      }
+    },
+    {
+      "label": {
+        "en": "Email",
+        "pt-BR": "E-mail"
+      },
+      "url": {
+        "en": "mailto:vin.stentzler@gmail.com",
+        "pt-BR": "mailto:vin.stentzler@gmail.com"
+      }
+    }
+  ]
+}

@@ -23,6 +23,30 @@ const localizedTextSchema = z.object({
   "pt-BR": z.string().trim().min(1),
 });
 
+const externalLinkSchema = z.object({
+  label: localizedTextSchema,
+  url: z.object({
+    en: z.string().url(),
+    "pt-BR": z.string().url(),
+  }),
+});
+
+export const profileSchema = z.object({
+  name: z.string().trim().min(1),
+  role: localizedTextSchema,
+  subRole: localizedTextSchema,
+  hero: localizedTextSchema,
+  availability: localizedTextSchema,
+  capabilities: z.array(localizedTextSchema).min(1),
+  bio: z.array(localizedTextSchema).min(1),
+  timeline: z.array(z.object({
+    period: localizedTextSchema,
+    title: localizedTextSchema,
+    description: localizedTextSchema,
+  })).min(1),
+  contactLinks: z.array(externalLinkSchema).min(1),
+});
+
 const projectSectionSchema = z.object({
   heading: localizedTextSchema,
   paragraphs: z.array(localizedTextSchema).min(1),
@@ -71,6 +95,7 @@ export const uiSchema = z.object({
       contact: z.string().min(1), language: z.string().min(1),
     }),
     content: z.object({ preparing: z.string().min(1), projectsEmpty: z.string().min(1), notFound: z.string().min(1), skipToContent: z.string().min(1) }),
+    sections: z.object({ capabilities: z.string().min(1), bio: z.string().min(1), timeline: z.string().min(1), contact: z.string().min(1) }),
     footer: z.object({ copyright: z.string().min(1) }),
   }),
   "pt-BR": z.object({
@@ -80,9 +105,11 @@ export const uiSchema = z.object({
       contact: z.string().min(1), language: z.string().min(1),
     }),
     content: z.object({ preparing: z.string().min(1), projectsEmpty: z.string().min(1), notFound: z.string().min(1), skipToContent: z.string().min(1) }),
+    sections: z.object({ capabilities: z.string().min(1), bio: z.string().min(1), timeline: z.string().min(1), contact: z.string().min(1) }),
     footer: z.object({ copyright: z.string().min(1) }),
   }),
 });
 
 export type Project = z.infer<typeof projectSchema>;
 export type UiContent = z.infer<typeof uiSchema>;
+export type Profile = z.infer<typeof profileSchema>;

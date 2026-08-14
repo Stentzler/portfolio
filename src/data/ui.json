@@ -17,6 +17,12 @@
       "notFound": "The requested page could not be found.",
       "skipToContent": "Skip to content"
     },
+    "sections": {
+      "capabilities": "Core capabilities",
+      "bio": "About",
+      "timeline": "Professional timeline",
+      "contact": "Get in touch"
+    },
     "footer": {
       "copyright": "All rights reserved."
     }
@@ -38,6 +44,12 @@
       "projectsEmpty": "Os projetos publicados aparecerão aqui.",
       "notFound": "A página solicitada não foi encontrada.",
       "skipToContent": "Pular para o conteúdo"
+    },
+    "sections": {
+      "capabilities": "Principais competências",
+      "bio": "Sobre",
+      "timeline": "Trajetória profissional",
+      "contact": "Entre em contato"
     },
     "footer": {
       "copyright": "Todos os direitos reservados."
