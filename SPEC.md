@@ -64,7 +64,7 @@ Each project card includes:
 
 Only three or four featured projects appear on the home page. The complete collection remains on the projects index.
 
-Category filtering is deferred until the collection is large enough to justify it, normally eight or more published projects.
+The projects index groups standard projects and labs into separate sections. Category filtering is deferred until the collection is large enough to justify it, normally eight or more published projects.
 
 ### 4.3 Project detail pages
 
@@ -485,4 +485,3 @@ The initial release is complete when:
 - Localized SEO and social-sharing metadata are generated.
 - Lint, type-checking, content validation, and production build pass.
 - A manual review confirms that affected pages work in both languages.
-

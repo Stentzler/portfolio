@@ -4,7 +4,7 @@
   "featured": false,
   "displayOrder": 2,
   "category": "lab",
-  "status": "completed",
+  "status": "lab",
   "year": 2026,
   "technologies": ["Python", "Pygame", "NumPy", "pytest", "Docker"],
   "repositoryUrl": "https://github.com/Stentzler/game-of-life-design-patterns",

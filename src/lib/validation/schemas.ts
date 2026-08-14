@@ -109,6 +109,7 @@ export const uiSchema = z.object({
     sections: z.object({ capabilities: z.string().min(1), bio: z.string().min(1), timeline: z.string().min(1), certifications: z.string().min(1), contact: z.string().min(1) }),
     projects: z.object({
       viewCaseStudy: z.string().min(1), backToProjects: z.string().min(1), repository: z.string().min(1), technologies: z.string().min(1),
+      sections: z.object({ projects: z.string().min(1), labs: z.string().min(1) }),
       category: z.record(projectCategorySchema, z.string().min(1)),
       status: z.record(projectStatusSchema, z.string().min(1)),
     }),
@@ -124,6 +125,7 @@ export const uiSchema = z.object({
     sections: z.object({ capabilities: z.string().min(1), bio: z.string().min(1), timeline: z.string().min(1), certifications: z.string().min(1), contact: z.string().min(1) }),
     projects: z.object({
       viewCaseStudy: z.string().min(1), backToProjects: z.string().min(1), repository: z.string().min(1), technologies: z.string().min(1),
+      sections: z.object({ projects: z.string().min(1), labs: z.string().min(1) }),
       category: z.record(projectCategorySchema, z.string().min(1)),
       status: z.record(projectStatusSchema, z.string().min(1)),
     }),

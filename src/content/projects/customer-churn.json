@@ -1,0 +1,75 @@
+{
+  "slug": "customer-churn",
+  "publicationState": "published",
+  "featured": false,
+  "displayOrder": 0,
+  "category": "lab",
+  "status": "lab",
+  "year": 2026,
+  "technologies": ["Python", "DVC", "MLflow", "DagsHub", "FastAPI", "Evidently"],
+  "repositoryUrl": "https://github.com/Stentzler/customer_churn",
+  "content": {
+    "title": {
+      "en": "Customer Churn MLOps",
+      "pt-BR": "MLOps para Churn de Clientes"
+    },
+    "summary": {
+      "en": "An in-progress learning project for an automated, auditable customer-churn lifecycle spanning DataOps, MLOps, and constrained LLMOps.",
+      "pt-BR": "Um projeto de estudo em andamento para um ciclo de vida automatizado e auditável de churn de clientes, abrangendo DataOps, MLOps e LLMOps com restrições."
+    },
+    "sections": [
+      {
+        "heading": {
+          "en": "Overview",
+          "pt-BR": "Visão geral"
+        },
+        "paragraphs": [
+          {
+            "en": "The project treats customer-churn prediction as an operational lifecycle rather than only a training script. It combines data validation, drift reporting, model training and registration, controlled promotion, and API serving.",
+            "pt-BR": "O projeto trata a predição de churn de clientes como um ciclo de vida operacional, e não apenas como um script de treinamento. Ele combina validação de dados, relatórios de drift, treinamento e registro de modelos, promoção controlada e disponibilização por API."
+          }
+        ]
+      },
+      {
+        "heading": {
+          "en": "Auditable data and model flow",
+          "pt-BR": "Fluxo auditável de dados e modelos"
+        },
+        "paragraphs": [
+          {
+            "en": "Incoming CSV files are validated against a contract and routed to accepted or rejected datasets. Feature and target drift reports determine whether the lifecycle stops after reporting or continues to dataset curation, candidate training, model selection, and MLflow/DagsHub registration.",
+            "pt-BR": "Arquivos CSV recebidos são validados contra um contrato e direcionados para conjuntos de dados aceitos ou rejeitados. Relatórios de drift de atributos e do alvo determinam se o ciclo é encerrado após os relatórios ou continua para curadoria, treinamento de candidatos, seleção de modelo e registro no MLflow/DagsHub."
+          },
+          {
+            "en": "DVC versions pipeline inputs and generated artifacts, while a fixed test dataset and API-compatibility checks are part of the gates before a candidate is eligible for manual promotion to the champion alias.",
+            "pt-BR": "O DVC versiona as entradas do pipeline e os artefatos gerados, enquanto um conjunto de teste fixo e verificações de compatibilidade da API fazem parte das etapas antes que um candidato possa ser elegível para promoção manual ao alias champion."
+          }
+        ]
+      },
+      {
+        "heading": {
+          "en": "Constrained LLM assistance",
+          "pt-BR": "Assistência de LLM com restrições"
+        },
+        "paragraphs": [
+          {
+            "en": "An optional agent can propose bounded experiments and write an analysis report. Deterministic code validates data and plans, trains candidates, selects the model, registers it, and evaluates promotion gates; the LLM does not make operational decisions.",
+            "pt-BR": "Um agente opcional pode propor experimentos delimitados e escrever um relatório de análise. Código determinístico valida os dados e os planos, treina candidatos, seleciona o modelo, realiza seu registro e avalia as etapas de promoção; a LLM não toma decisões operacionais."
+          }
+        ]
+      },
+      {
+        "heading": {
+          "en": "Automation and serving",
+          "pt-BR": "Automação e disponibilização"
+        },
+        "paragraphs": [
+          {
+            "en": "The same lifecycle can run locally or through GitHub Actions. After promotion, a FastAPI service can serve the model registered under the champion alias through health, model-information, and prediction endpoints.",
+            "pt-BR": "O mesmo ciclo de vida pode ser executado localmente ou pelo GitHub Actions. Após a promoção, um serviço FastAPI pode disponibilizar o modelo registrado sob o alias champion por endpoints de saúde, informações do modelo e predição."
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -10,11 +10,16 @@ type ProjectCardProps = {
 
 export function ProjectCard({ locale, project }: ProjectCardProps) {
   const ui = getUiContent(locale);
+  const categoryLabel = ui.projects.category[project.category];
+  const statusLabel = ui.projects.status[project.status];
+  const showsDistinctStatus = categoryLabel !== statusLabel;
 
   return (
     <article className="border border-line p-6">
       <div className="flex flex-wrap gap-x-3 gap-y-1 text-sm font-medium text-accent">
-        <span>{ui.projects.category[project.category]}</span><span aria-hidden="true">·</span><span>{ui.projects.status[project.status]}</span><span aria-hidden="true">·</span><span>{project.year}</span>
+        <span>{categoryLabel}</span>
+        {showsDistinctStatus && <><span aria-hidden="true">·</span><span>{statusLabel}</span></>}
+        <span aria-hidden="true">·</span><span>{project.year}</span>
       </div>
       <h2 className="mt-5 text-2xl font-semibold tracking-tight"><Link href={getLocalePath(locale, `projects/${project.slug}`)}>{project.content.title[locale]}</Link></h2>
       <p className="mt-4 leading-7 text-muted">{project.content.summary[locale]}</p>

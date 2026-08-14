@@ -18,12 +18,17 @@ function GitHubIcon() {
 
 export function ProjectCaseStudy({ locale, project }: ProjectCaseStudyProps) {
   const ui = getUiContent(locale);
+  const categoryLabel = ui.projects.category[project.category];
+  const statusLabel = ui.projects.status[project.status];
+  const showsDistinctStatus = categoryLabel !== statusLabel;
 
   return (
     <article className="max-w-3xl">
       <Link className="text-sm font-medium text-muted underline" href={getLocalePath(locale, "projects")}>{ui.projects.backToProjects}</Link>
       <div className="mt-8 flex flex-wrap gap-x-3 gap-y-1 text-sm font-medium text-accent">
-        <span>{ui.projects.category[project.category]}</span><span aria-hidden="true">·</span><span>{ui.projects.status[project.status]}</span><span aria-hidden="true">·</span><span>{project.year}</span>
+        <span>{categoryLabel}</span>
+        {showsDistinctStatus && <><span aria-hidden="true">·</span><span>{statusLabel}</span></>}
+        <span aria-hidden="true">·</span><span>{project.year}</span>
       </div>
       <h1 className="mt-5 text-4xl font-semibold tracking-tight sm:text-6xl">{project.content.title[locale]}</h1>
       <p className="mt-6 text-xl leading-8 text-muted">{project.content.summary[locale]}</p>
