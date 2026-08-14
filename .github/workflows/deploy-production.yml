@@ -36,15 +36,21 @@ jobs:
           : "${SSM_DEPLOYMENT_TARGET_PARAMETER:?Missing production environment variable SSM_DEPLOYMENT_TARGET_PARAMETER}"
           : "${AWS_DEPLOY_ROLE_ARN:?Missing production environment secret AWS_DEPLOY_ROLE_ARN}"
 
+      # setup-node detects pnpm from package.json for its dependency cache, so
+      # install the package manager before setup-node attempts that lookup.
+      - name: Set up the pinned pnpm version
+        uses: pnpm/action-setup@0e279bb959325dab635dd2c09392533439d90093 # v6.0.8
+        with:
+          version: 10.15.0
+          run_install: false
+
       - name: Set up the pinned Node.js version
         uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
         with:
           node-version: 20.20.2
 
       - name: Install the exact dependencies
-        run: |
-          corepack enable
-          pnpm install --frozen-lockfile
+        run: pnpm install --frozen-lockfile
 
       - name: Check the static site before creating an image
         run: |
