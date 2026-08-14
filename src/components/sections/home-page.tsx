@@ -53,6 +53,26 @@ export function HomePage({ locale }: HomePageProps) {
           </ol>
         </section>
 
+        <section aria-labelledby="certifications-heading" className="pt-12">
+          <h2 className="section-heading" id="certifications-heading">{ui.sections.certifications}</h2>
+          <div className="border-t border-line">
+            {profile.certifications.map((certification) => (
+              <details className="border-b border-line" key={`${certification.period.en}-${certification.title.en}`}>
+                <summary className="grid cursor-pointer gap-3 py-6 md:grid-cols-[10rem_1fr]">
+                  <span className="text-sm font-medium text-accent">{certification.period[locale]}</span>
+                  <span className="text-lg font-semibold">{certification.title[locale]}</span>
+                </summary>
+                <div className="space-y-2 pb-6 text-sm leading-6 text-muted md:pl-40">
+                  <p>{certification.issuer[locale]}</p>
+                  {certification.expires && <p>{certification.expires[locale]}</p>}
+                  {certification.description && <p>{certification.description[locale]}</p>}
+                  {certification.credentialUrl && <a className="font-medium underline" href={certification.credentialUrl} rel="noreferrer" target="_blank">{certification.credentialUrl}</a>}
+                </div>
+              </details>
+            ))}
+          </div>
+        </section>
+
         <section aria-labelledby="contact-heading" className="py-12" id="contact">
           <h2 className="section-heading" id="contact-heading">{ui.sections.contact}</h2>
           <ul className="flex flex-wrap gap-x-6 gap-y-3 text-lg font-semibold">

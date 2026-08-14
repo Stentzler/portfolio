@@ -1,15 +1,16 @@
 {
   "name": "Vinicius Stentzler",
+  "companyName": "Stentzler",
   "role": {
     "en": "Backend Engineer",
     "pt-BR": "Backend Engineer"
   },
   "subRole": {
     "en": "Cloud & Platform Engineering",
-    "pt-BR": "Cloud & Engenharia de Plataforma"
+    "pt-BR": "Cloud & Platform Engineering"
   },
   "hero": {
-    "en": "I build reliable backend systems, serverless applications, and cloud infrastructure with Python, TypeScript, and AWS, focusing on maintainability, automation, and operational simplicity.",
+    "en": "I build reliable backend systems, serverless applications, and cloud infrastructure with Python, TypeScript, and AWS, focusing on maintainability, automation and operational simplicity.",
     "pt-BR": "Construo sistemas backend confiáveis, aplicações serverless e infraestrutura em nuvem com Python, TypeScript e AWS, com foco em manutenibilidade, automação e simplicidade operacional."
   },
   "availability": {
@@ -33,7 +34,7 @@
   "bio": [
     {
       "en": "I am a backend engineer and AWS Certified with experience building and maintaining applications using Python, TypeScript and Node.js. My work focuses on reliable APIs, system integrations, data processing, and cloud solutions.",
-      "pt-BR": "Sou engenheiro de backend e AWS Certified, com experiência no desenvolvimento e na manutenção de aplicações utilizando Python, TypeScript e Node.js Go. Meu trabalho é voltado a APIs robustas, integrações entre sistemas, processamento de dados e soluções em nuvem."
+      "pt-BR": "Sou engenheiro de backend e AWS Certified, com experiência no desenvolvimento e na manutenção de aplicações utilizando Python, TypeScript e Node.js. Meu trabalho é voltado a APIs robustas, integrações entre sistemas, processamento de dados e soluções em nuvem."
     },
     {
       "en": "I enjoy turning complex requirements into simple, maintainable systems, especially where backend development meets cloud infrastructure, automation and observability. I am deepening my knowledge of serverless architecture, DevOps, and platform engineering to build systems that are easier to deploy, operate, and evolve.",
@@ -41,20 +42,6 @@
     }
   ],
   "timeline": [
-    {
-      "period": {
-        "en": "Apr 2026",
-        "pt-BR": "Abr 2026"
-      },
-      "title": {
-        "en": "AWS Certified Developer – Associate",
-        "pt-BR": "AWS Certified Developer – Associate"
-      },
-      "description": {
-        "en": "AWS certification validating knowledge of developing, deploying, debugging, and maintaining cloud applications.",
-        "pt-BR": "Certificação AWS que valida conhecimentos no desenvolvimento, implantação, depuração e manutenção de aplicações em nuvem."
-      }
-    },
     {
       "period": {
         "en": "Jan 2026 — Dec 2026",
@@ -95,6 +82,26 @@
       "description": {
         "en": "Maintained third-party integrations, automated serverless file processing on AWS, built asynchronous tasks with Celery and RabbitMQ, and contributed to refactoring, performance improvements, and testing.",
         "pt-BR": "Manutenção de integrações com sistemas de terceiros, automação serverless de processamento de arquivos na AWS, desenvolvimento de tarefas assíncronas com Celery e RabbitMQ e contribuição para refatorações, melhorias de performance e testes."
+      }
+    }
+  ],
+  "certifications": [
+    {
+      "period": {
+        "en": "Apr 2026",
+        "pt-BR": "Abr 2026"
+      },
+      "title": {
+        "en": "AWS Certified Developer – Associate",
+        "pt-BR": "AWS Certified Developer – Associate"
+      },
+      "issuer": {
+        "en": "Amazon Web Services (AWS)",
+        "pt-BR": "Amazon Web Services (AWS)"
+      },
+      "expires": {
+        "en": "Mar 2029",
+        "pt-BR": "Mar 2029"
       }
     }
   ],

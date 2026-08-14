@@ -34,8 +34,9 @@ export function SiteLayout({ children, locale }: SiteLayoutProps) {
         <main className="mx-auto min-h-[calc(100vh-9rem)] max-w-6xl px-5 pt-16" id="main-content">{children}</main>
         <footer className="sticky bottom-0 z-20 border-t border-line bg-canvas/95 backdrop-blur">
           <div className="mx-auto flex max-w-6xl flex-col gap-4 px-5 py-6 text-sm text-muted sm:flex-row sm:items-center sm:justify-between">
-            <p>© {new Date().getFullYear()} {profile.name}. {ui.footer.copyright}</p>
+            <p>© {new Date().getFullYear()} {profile.companyName}. {ui.footer.copyright}</p>
             <ul className="flex flex-wrap gap-x-5 gap-y-2 font-medium">
+              <li><Link href={getLocalePath(locale, "projects")}>{ui.navigation.projects}</Link></li>
               {profile.contactLinks.map((link) => {
                 const url = link.url[locale];
                 const isEmailLink = url.startsWith("mailto:");

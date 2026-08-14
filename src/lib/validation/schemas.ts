@@ -31,8 +31,18 @@ const externalLinkSchema = z.object({
   }),
 });
 
+const certificationSchema = z.object({
+  period: localizedTextSchema,
+  title: localizedTextSchema,
+  issuer: localizedTextSchema,
+  expires: localizedTextSchema.optional(),
+  description: localizedTextSchema.optional(),
+  credentialUrl: z.string().url().optional(),
+});
+
 export const profileSchema = z.object({
   name: z.string().trim().min(1),
+  companyName: z.string().trim().min(1),
   role: localizedTextSchema,
   subRole: localizedTextSchema,
   hero: localizedTextSchema,
@@ -44,6 +54,7 @@ export const profileSchema = z.object({
     title: localizedTextSchema,
     description: localizedTextSchema,
   })).min(1),
+  certifications: z.array(certificationSchema),
   contactLinks: z.array(externalLinkSchema).min(1),
 });
 
@@ -95,7 +106,7 @@ export const uiSchema = z.object({
       contact: z.string().min(1), language: z.string().min(1),
     }),
     content: z.object({ preparing: z.string().min(1), projectsEmpty: z.string().min(1), notFound: z.string().min(1), skipToContent: z.string().min(1) }),
-    sections: z.object({ capabilities: z.string().min(1), bio: z.string().min(1), timeline: z.string().min(1), contact: z.string().min(1) }),
+    sections: z.object({ capabilities: z.string().min(1), bio: z.string().min(1), timeline: z.string().min(1), certifications: z.string().min(1), contact: z.string().min(1) }),
     footer: z.object({ copyright: z.string().min(1) }),
   }),
   "pt-BR": z.object({
@@ -105,7 +116,7 @@ export const uiSchema = z.object({
       contact: z.string().min(1), language: z.string().min(1),
     }),
     content: z.object({ preparing: z.string().min(1), projectsEmpty: z.string().min(1), notFound: z.string().min(1), skipToContent: z.string().min(1) }),
-    sections: z.object({ capabilities: z.string().min(1), bio: z.string().min(1), timeline: z.string().min(1), contact: z.string().min(1) }),
+    sections: z.object({ capabilities: z.string().min(1), bio: z.string().min(1), timeline: z.string().min(1), certifications: z.string().min(1), contact: z.string().min(1) }),
     footer: z.object({ copyright: z.string().min(1) }),
   }),
 });

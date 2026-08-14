@@ -21,6 +21,7 @@
       "capabilities": "Core capabilities",
       "bio": "About",
       "timeline": "Professional timeline",
+      "certifications": "Certifications",
       "contact": "Get in touch"
     },
     "footer": {
@@ -49,6 +50,7 @@
       "capabilities": "Principais competências",
       "bio": "Sobre",
       "timeline": "Trajetória profissional",
+      "certifications": "Certificações",
       "contact": "Entre em contato"
     },
     "footer": {
