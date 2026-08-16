@@ -100,7 +100,11 @@ export const projectSchema = z.object({
 
 export const uiSchema = z.object({
   en: z.object({
-    metadata: z.object({ title: z.string().min(1), description: z.string().min(1) }),
+    metadata: z.object({
+      title: z.string().min(1),
+      description: z.string().min(1),
+      projects: z.object({ title: z.string().min(1), description: z.string().min(1) }),
+    }),
     navigation: z.object({
       home: z.string().min(1), bio: z.string().min(1), projects: z.string().min(1),
       contact: z.string().min(1), language: z.string().min(1),
@@ -117,7 +121,11 @@ export const uiSchema = z.object({
     footer: z.object({ copyright: z.string().min(1) }),
   }),
   "pt-BR": z.object({
-    metadata: z.object({ title: z.string().min(1), description: z.string().min(1) }),
+    metadata: z.object({
+      title: z.string().min(1),
+      description: z.string().min(1),
+      projects: z.object({ title: z.string().min(1), description: z.string().min(1) }),
+    }),
     navigation: z.object({
       home: z.string().min(1), bio: z.string().min(1), projects: z.string().min(1),
       contact: z.string().min(1), language: z.string().min(1),

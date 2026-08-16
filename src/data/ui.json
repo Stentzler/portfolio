@@ -1,8 +1,12 @@
 {
   "en": {
     "metadata": {
-      "title": "Portfolio",
-      "description": "A software engineering portfolio."
+      "title": "Vinicius Stentzler | Backend Engineer | AWS, Serverless & Cloud",
+      "description": "Backend engineer specializing in AWS, serverless applications, cloud infrastructure, automation, and reliable software systems.",
+      "projects": {
+        "title": "Projects | Vinicius Stentzler",
+        "description": "Backend, cloud, serverless, DevOps, and platform engineering projects by Vinicius Stentzler."
+      }
     },
     "navigation": {
       "home": "Home",
@@ -61,8 +65,12 @@
   },
   "pt-BR": {
     "metadata": {
-      "title": "Portfólio",
-      "description": "Um portfólio de engenharia de software."
+      "title": "Vinicius Stentzler | Engenheiro Backend | AWS, Serverless e Cloud",
+      "description": "Engenheiro backend especializado em AWS, aplicações serverless, infraestrutura cloud, automação e sistemas de software confiáveis.",
+      "projects": {
+        "title": "Projetos | Vinicius Stentzler",
+        "description": "Projetos de backend, cloud, serverless, DevOps e engenharia de plataforma de Vinicius Stentzler."
+      }
     },
     "navigation": {
       "home": "Início",
