@@ -8,7 +8,6 @@
   "year": 2026,
   "technologies": ["AWS Lambda", "AWS Step Functions", "Amazon ECS", "DynamoDB", "AWS S3", "AWS SQS", "AWS SNS", "Terraform", "GitHub Actions"],
   "repositoryUrl": "https://github.com/Stentzler/caged",
-  "demoUrl": "https://dataempregos.stentzler.com.br",
   "content": {
     "title": {
       "en": "CAGED / DataEmpregos",

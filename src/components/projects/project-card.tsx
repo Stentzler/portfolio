@@ -17,7 +17,7 @@ export function ProjectCard({ locale, project }: ProjectCardProps) {
   const showsDistinctStatus = categoryLabel !== statusLabel;
 
   return (
-    <article className="border border-line p-6">
+    <article className="flex h-full flex-col border border-line p-6">
       <div className="flex flex-wrap gap-x-3 gap-y-1 text-sm font-medium text-accent">
         <span>{categoryLabel}</span>
         {showsDistinctStatus && <><span aria-hidden="true">·</span><span>{statusLabel}</span></>}
@@ -25,26 +25,28 @@ export function ProjectCard({ locale, project }: ProjectCardProps) {
       </div>
       <h2 className="mt-5 text-2xl font-semibold tracking-tight"><Link href={getLocalePath(locale, `projects/${project.slug}`)}>{project.content.title[locale]}</Link></h2>
       <p className="mt-4 leading-7 text-muted">{project.content.summary[locale]}</p>
-      <ul className="mt-5 flex flex-wrap gap-2" aria-label={ui.projects.technologies}>
-        {project.technologies.map((technology) => <li className="border border-line px-2 py-1 text-sm" key={technology}>{technology}</li>)}
-      </ul>
-      <div className="mt-6 flex flex-wrap gap-x-5 gap-y-3 font-medium">
-        <Link className="inline-flex items-center gap-2 underline" href={getLocalePath(locale, `projects/${project.slug}`)}>
-          <DetailsIcon />
-          {ui.projects.viewCaseStudy}
-        </Link>
-        {project.repositoryUrl && (
-          <a className="inline-flex items-center gap-2 underline" href={project.repositoryUrl} rel="noreferrer" target="_blank">
-            <GitHubIcon />
-            {ui.projects.repository}
-          </a>
-        )}
-        {project.demoUrl && (
-          <a className="inline-flex items-center gap-2 underline" href={project.demoUrl} rel="noreferrer" target="_blank">
-            <WebsiteIcon />
-            {ui.projects.liveDemo}
-          </a>
-        )}
+      <div className="mt-auto pt-5">
+        <ul className="flex min-h-20 flex-wrap content-start gap-2" aria-label={ui.projects.technologies}>
+          {project.technologies.map((technology) => <li className="border border-line px-2 py-1 text-sm" key={technology}>{technology}</li>)}
+        </ul>
+        <div className="mt-6 flex flex-wrap gap-x-5 gap-y-3 font-medium">
+          <Link className="inline-flex items-center gap-2 underline" href={getLocalePath(locale, `projects/${project.slug}`)}>
+            <DetailsIcon />
+            {ui.projects.viewCaseStudy}
+          </Link>
+          {project.repositoryUrl && (
+            <a className="inline-flex items-center gap-2 underline" href={project.repositoryUrl} rel="noreferrer" target="_blank">
+              <GitHubIcon />
+              {ui.projects.repository}
+            </a>
+          )}
+          {project.demoUrl && (
+            <a className="inline-flex items-center gap-2 underline" href={project.demoUrl} rel="noreferrer" target="_blank">
+              <WebsiteIcon />
+              {ui.projects.liveDemo}
+            </a>
+          )}
+        </div>
       </div>
     </article>
   );
