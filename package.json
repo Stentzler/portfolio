@@ -1,10 +1,10 @@
 {
   "name": "vinicius-portfolio",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "packageManager": "pnpm@10.15.0",
   "engines": {
-    "node": "20.20.2",
+    "node": "24.x",
     "pnpm": "10.15.0"
   },
   "scripts": {
@@ -21,7 +21,7 @@
     "zod": "3.25.76"
   },
   "devDependencies": {
-    "@types/node": "20.19.9",
+    "@types/node": "24.19.0",
     "@types/react": "19.1.9",
     "@types/react-dom": "19.1.7",
     "autoprefixer": "10.4.21",

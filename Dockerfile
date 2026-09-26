@@ -1,5 +1,5 @@
 # Build the static export with the Node version pinned by package.json.
-FROM node:20-alpine AS builder
+FROM node:24.21.0-alpine AS builder
 
 WORKDIR /app
 
