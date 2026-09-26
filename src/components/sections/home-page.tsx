@@ -40,10 +40,10 @@ export function HomePage({ locale }: HomePageProps) {
         </div>
       </section>
 
-      <div>
+      <div className="!mt-4 border-t border-line pt-15">
         <section aria-labelledby="timeline-heading">
-          <h2 className="section-heading" id="timeline-heading">{ui.sections.timeline}</h2>
-          <ol className="border-t border-line">
+          <h2 className="section-heading !mb-[0.6rem]" id="timeline-heading">{ui.sections.timeline}</h2>
+          <ol>
             {profile.timeline.map((entry) => (
               <li className="grid gap-3 border-b border-line py-6 md:grid-cols-[10rem_1fr]" key={`${entry.period.en}-${entry.title.en}`}>
                 <p className="text-sm font-medium text-accent">{entry.period[locale]}</p>
@@ -53,9 +53,9 @@ export function HomePage({ locale }: HomePageProps) {
           </ol>
         </section>
 
-        <section aria-labelledby="certifications-heading" className="pt-12">
-          <h2 className="section-heading" id="certifications-heading">{ui.sections.certifications}</h2>
-          <div className="border-t border-line">
+        <section aria-labelledby="certifications-heading" className="pt-15">
+          <h2 className="section-heading !mb-[0.6rem]" id="certifications-heading">{ui.sections.certifications}</h2>
+          <div>
             {profile.certifications.map((certification) => (
               <details className="border-b border-line" key={`${certification.period.en}-${certification.title.en}`}>
                 <summary className="grid cursor-pointer gap-3 py-6 md:grid-cols-[10rem_1fr]">
@@ -73,7 +73,7 @@ export function HomePage({ locale }: HomePageProps) {
           </div>
         </section>
 
-        <section aria-labelledby="contact-heading" className="pt-12" id="contact">
+        <section aria-labelledby="contact-heading" className="pt-15" id="contact">
           <h2 className="section-heading" id="contact-heading">{ui.sections.contact}</h2>
           <ul className="flex flex-wrap gap-x-6 gap-y-3 text-lg font-semibold">
             {profile.contactLinks.map((link) => {

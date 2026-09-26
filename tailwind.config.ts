@@ -4,6 +4,9 @@ const config: Config = {
   content: ["./src/**/*.{js,ts,jsx,tsx,mdx}"],
   theme: {
     extend: {
+      spacing: {
+        15: "3.75rem",
+      },
       colors: {
         canvas: "rgb(var(--color-canvas) / <alpha-value>)",
         ink: "rgb(var(--color-ink) / <alpha-value>)",

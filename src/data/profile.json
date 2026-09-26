@@ -102,6 +102,34 @@
   "certifications": [
     {
       "period": {
+        "en": "Sep 2026",
+        "pt-BR": "Set 2026"
+      },
+      "title": {
+        "en": "HashiCorp Certified: Terraform Associate (004)",
+        "pt-BR": "HashiCorp Certified: Terraform Associate (004)"
+      },
+      "issuer": {
+        "en": "HashiCorp",
+        "pt-BR": "HashiCorp"
+      }
+    },
+    {
+      "period": {
+        "en": "Sep 2026",
+        "pt-BR": "Set 2026"
+      },
+      "title": {
+        "en": "AWS Certified CloudOps Engineer - Associate",
+        "pt-BR": "AWS Certified CloudOps Engineer - Associate"
+      },
+      "issuer": {
+        "en": "Amazon Web Services (AWS)",
+        "pt-BR": "Amazon Web Services (AWS)"
+      }
+    },
+    {
+      "period": {
         "en": "Apr 2026",
         "pt-BR": "Abr 2026"
       },
